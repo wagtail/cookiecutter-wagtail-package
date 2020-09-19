@@ -1,0 +1,13 @@
+{
+    "full_name": "Karl Hobley",
+    "email": "karl@kaed.uk",
+    "github_username": "kaedroho",
+    "project_name": "Localize",
+    "project_name_snake": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_name_kebab": "{{ cookiecutter.project_name_snake.replace('_', '-') }}",
+    "project_name_camel": "{{ cookiecutter.project_name_snake.replace('_', ' ').title().replace(' ', '') }}",
+    "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+    "pypi_username": "{{ cookiecutter.github_username }}",
+    "version": "0.1.0",
+    "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
+  }
