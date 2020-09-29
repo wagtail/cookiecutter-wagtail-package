@@ -1,1 +1,1 @@
-/.wagtail-{{ cookiecutter.project_name_kebab }}.js
+/wagtail-{{ cookiecutter.project_name_kebab }}.js
