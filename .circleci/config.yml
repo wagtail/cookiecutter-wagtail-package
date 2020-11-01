@@ -1,0 +1,19 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build-and-test:
+    executor: python/default
+    steps:
+      - checkout
+      - run: pip install cookiecutter
+      - run: cookiecutter . --no-input
+      - run: pip install -e./wagtail-localize[testing]
+      - run: cd wagtail-localize && python testmanage.py test
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
