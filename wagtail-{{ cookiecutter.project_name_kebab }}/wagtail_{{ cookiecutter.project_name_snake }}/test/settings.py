@@ -155,3 +155,8 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, "collect_static")
 STATIC_URL = "/static/"
 
 MEDIA_ROOT = os.path.join(PROJECT_DIR, "media")
+
+
+# Wagtail settings
+
+WAGTAIL_SITE_NAME = "Wagtail {{ cookiecutter.project_name }} test site"
