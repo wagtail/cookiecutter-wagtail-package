@@ -2,20 +2,29 @@ version: 2.1
 
 orbs:
   python: circleci/python@1.2.1
+  node: circleci/node@4.1.0
 
 jobs:
-  python:
+  lint_and_test:
     executor:
       name: python/default
       tag: "3.9"
     steps:
+      # Build
       - checkout
       - run: pip install cookiecutter
       - run: cookiecutter . --no-input
+
+      # Python
       - run: pip install -e./wagtail-localize[testing]
       - run: cd wagtail-localize && python testmanage.py test
+
+      # JavaScript
+      - node/install:
+        tag: "14.15.0"
+      - run: cd wagtail-localize && npm install && npm run lint
 
 workflows:
   main:
     jobs:
-      - python
+      - lint_and_test
