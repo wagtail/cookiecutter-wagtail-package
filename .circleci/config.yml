@@ -5,26 +5,48 @@ orbs:
   node: circleci/node@4.1.0
 
 jobs:
-  lint_and_test:
+  render:
     executor:
       name: python/default
       tag: "3.9"
     steps:
-      # Build
       - checkout
       - run: pip install cookiecutter
       - run: cookiecutter . --no-input
+      - persist_to_workspace:
+          root: ~/project/
+          paths:
+            - wagtail-localize/*
 
-      # Python
-      - run: pip install -e./wagtail-localize[testing]
-      - run: cd wagtail-localize && python testmanage.py test
+  python:
+    executor:
+      name: python/default
+      tag: "3.9"
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run: ls
+      - run: pip install -e/tmp/workspace/wagtail-localize[testing]
+      - run: cd /tmp/workspace/wagtail-localize && python testmanage.py test
 
-      # JavaScript
-      - node/install:
-        tag: "14.15.0"
-      - run: cd wagtail-localize && npm install && npm run lint
+  javascript:
+    executor:
+      name: node/default
+      tag: "14.15.0"
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run: ls
+      - run: cd /tmp/workspace/wagtail-localize && npm install
+      - run: cd /tmp/workspace/wagtail-localize && npm run lint
 
 workflows:
   main:
     jobs:
-      - lint_and_test
+      - render
+      - python:
+          requires:
+            - render
+      - javascript:
+          requires:
+            - render
