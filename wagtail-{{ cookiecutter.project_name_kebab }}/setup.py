@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
-import sys, os
+from os import path
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
+
+from wagtail_{{ cookiecutter.project_name_snake }} import __version__
 
 # Hack to prevent "TypeError: 'NoneType' object is not callable" error
 # in multiprocessing/util.py _exit_function when setup.py exits
@@ -12,11 +14,16 @@ try:
 except ImportError:
     pass
 
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
+    long_description = f.read()
 
 setup(
     name="wagtail-{{ cookiecutter.project_name_kebab }}",
     version="0.1",
     description="{{ cookiecutter.project_short_description }}",
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author="{{ cookiecutter.full_name }}",
     author_email="{{ cookiecutter.email }}",
     url="",
