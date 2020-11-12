@@ -29,6 +29,17 @@ jobs:
       - run: pip install -e/tmp/workspace/wagtail-localize[testing]
       - run: cd /tmp/workspace/wagtail-localize && python testmanage.py test
 
+  flake8:
+    executor:
+      name: python/default
+      tag: "3.9"
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run: ls
+      - run: pip install flake8
+      - run: cd /tmp/workspace/wagtail-localize && flake8
+
   javascript:
     executor:
       name: node/default
@@ -45,6 +56,9 @@ workflows:
     jobs:
       - render
       - python:
+          requires:
+            - render
+      - flake8:
           requires:
             - render
       - javascript:
