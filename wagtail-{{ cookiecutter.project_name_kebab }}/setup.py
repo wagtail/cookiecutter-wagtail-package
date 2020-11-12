@@ -6,13 +6,6 @@ from setuptools import find_packages, setup
 
 from wagtail_{{ cookiecutter.project_name_snake }} import __version__
 
-# Hack to prevent "TypeError: 'NoneType' object is not callable" error
-# in multiprocessing/util.py _exit_function when setup.py exits
-# (see http://www.eby-sarna.com/pipermail/peak/2010-May/003357.html)
-try:
-    import multiprocessing
-except ImportError:
-    pass
 
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
@@ -20,7 +13,7 @@ with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
 
 setup(
     name="wagtail-{{ cookiecutter.project_name_kebab }}",
-    version="0.1",
+    version=__version__,
     description="{{ cookiecutter.project_short_description }}",
     long_description=long_description,
     long_description_content_type='text/markdown',
