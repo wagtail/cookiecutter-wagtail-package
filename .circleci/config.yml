@@ -25,18 +25,16 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - run: ls
       - run: pip install -e/tmp/workspace/wagtail-localize[testing]
       - run: cd /tmp/workspace/wagtail-localize && python testmanage.py test
 
-  flake8:
+  python_format:
     executor:
       name: python/default
       tag: "3.9"
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - run: ls
       - run: pip install flake8
       - run: cd /tmp/workspace/wagtail-localize && flake8
 
@@ -47,8 +45,20 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - run: ls
       - run: cd /tmp/workspace/wagtail-localize && npm install
+      - run: cd /tmp/workspace/wagtail-localize && npm run build
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+            - wagtail-localize/*
+
+  javascript_format:
+    executor:
+      name: node/default
+      tag: "14.15.0"
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
       - run: cd /tmp/workspace/wagtail-localize && npm run lint
 
 workflows:
@@ -58,9 +68,12 @@ workflows:
       - python:
           requires:
             - render
-      - flake8:
+      - python_format:
           requires:
             - render
       - javascript:
           requires:
             - render
+      - javascript_format:
+          requires:
+            - javascript
