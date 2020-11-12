@@ -11,7 +11,19 @@ jobs:
       tag: "3.9"
     steps:
       - checkout
+
+      - type: cache-restore
+        keys:
+         - pip-cookiecutter-{{ .Branch }}-
+         - pip-cookiecutter-master-
+
       - run: pip install cookiecutter
+
+      - type: cache-save
+        key: pip-cookiecutter-{{ .Branch }}-{{ epoch }}
+        paths:
+          - "~/.cache/pip"
+
       - run: cookiecutter . --no-input
       - persist_to_workspace:
           root: ~/project/
@@ -25,7 +37,19 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/workspace
+
+      - type: cache-restore
+        keys:
+         - pip-{{ .Branch }}-
+         - pip-master-
+
       - run: pip install -e/tmp/workspace/wagtail-localize[testing]
+
+      - type: cache-save
+        key: pip-{{ .Branch }}-{{ epoch }}
+        paths:
+          - "~/.cache/pip"
+
       - run: cd /tmp/workspace/wagtail-localize && python testmanage.py test
 
   python_format:
@@ -45,8 +69,22 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/workspace
+
+      - type: cache-restore
+        keys:
+          - node-modules-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          - node-modules-{{ .Branch }}-
+          - node-modules-master-
+
       - run: cd /tmp/workspace/wagtail-localize && npm install
+
+      - type: cache-save
+        key: node-modules-{{ .Branch }}-{{ checksum "package-lock.json" }}
+        paths:
+          - "/tmp/workspace/wagtail-localize/node_modules"
+
       - run: cd /tmp/workspace/wagtail-localize && npm run build
+
       - persist_to_workspace:
           root: /tmp/workspace
           paths:
