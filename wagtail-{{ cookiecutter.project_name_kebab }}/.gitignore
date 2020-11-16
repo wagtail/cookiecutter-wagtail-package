@@ -10,3 +10,5 @@
 /site
 /test_wagtail_{{ cookiecutter.project_name_snake }}.db
 /node_modules
+/test-static
+/test-media
