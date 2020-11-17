@@ -10,9 +10,9 @@ This creates a simple Python/Django app with a nested "test" app.
 
 ### CI
 
-This contains CI configs for both CircleCI and Travis.
+This contains CI configs for both CircleCI and Github Actions.
 We use two CI services simultaneously to allow fast response times (CircleCI)
-while also allowing us to run a large test matrix at the same time (Travis).
+while also allowing us to run a large test matrix at the same time (Github Actions).
 
 ### Docs
 
