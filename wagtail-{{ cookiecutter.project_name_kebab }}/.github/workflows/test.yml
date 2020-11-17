@@ -1,4 +1,4 @@
-name: {{ cookiecutter.project_name }} CI{% raw %}
+name: {{ cookiecutter.project_name }}{% raw %} CI
 
 on:
   push:
@@ -14,11 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        include:
-          - toxenv: py38-dj22-wa211-sqlite
-            python: 3.8
-          - toxenv: py38-dj31-wa211-sqlite
-            python: 3.8
+        python: ['3.7', '3.8']
+        django: ['2.2', '3.0', '3.1']
+        wagtail: ['2.11']
 
     steps:
       - uses: actions/checkout@v2
@@ -33,29 +31,20 @@ jobs:
         run: |
           tox
         env:
-          TOXENV: ${{ matrix.toxenv }}
+          TOXENV: python${{ matrix.python }}-django${{ matrix.django }}-wagtail${{ matrix.wagtail }}-sqlite
 
   test-postgres:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        include:
-          - toxenv: py37-dj22-wa211-postgres
-            python: 3.7
-          - toxenv: py38-dj22-wa211-postgres
-            python: 3.8
-          - toxenv: py37-dj30-wa211-postgres
-            python: 3.7
-          - toxenv: py38-dj30-wa211-postgres
-            python: 3.8
-          - toxenv: py38-dj31-wa211-postgres
-            python: 3.8
-          - toxenv: py38-dj31-wamaster-postgres
-            python: 3.8
+        python: ['3.7', '3.8']
+        django: ['2.2', '3.0', '3.1']
+        wagtail: ['2.11']
+        postgres: ['10.8']
 
     services:
       postgres:
-        image: postgres:10.8
+        image: postgres:${{ matrix.postgres }}
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
@@ -74,4 +63,4 @@ jobs:
           tox
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/wagtail_{% endraw %}{{ cookiecutter.project_name_snake }}{% raw %}
-          TOXENV: ${{ matrix.toxenv }}{% endraw %}
+          TOXENV: python${{ matrix.python }}-django${{ matrix.django }}-wagtail${{ matrix.wagtail }}-postgres{% endraw %}
