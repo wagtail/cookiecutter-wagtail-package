@@ -1,10 +1,8 @@
 # cookiecutter-wagtail-plugin
 
-An opinionated cookiecutter template for building Wagtail plugins.
+A cookiecutter template for building Wagtail plugins.
 
 ## What's included
-
-### Python
 
 This creates a simple Python/Django app with a nested "test" app.
 
@@ -14,12 +12,24 @@ This contains CI configs for both CircleCI and Github Actions.
 We use two CI services simultaneously to allow fast response times (CircleCI)
 while also allowing us to run a large test matrix at the same time (Github Actions).
 
-### Docs
-
-This bit isn't done yet. I plan to use Sphinx (because autodoc is very useful for plugins)
-
 ### Frontend tooling
 
 This includes a simple webpack setup with TypeScript, React, styled-components, and SVG support.
 
 Note that React is pinned to 16.x because on production it uses the same React library as Wagtail to reduce bundle size.
+
+I haven't yet added a question into the cookiecutter config that excludes this. So if you don't want it, delete it.
+
+## How to use
+
+Firstly install cookiecutter:
+
+    pip install cookiecutter
+    
+Then run it like so:
+
+    cookiecutter git@github.com:kaedroho/cookiecutter-wagtail-plugin.git
+    
+It'll ask you for some details about you. When it asks for your project name, exclude the "Wagtail" prefix.
+For example, if your project is called "Wagtail Llamas", set your project name to "Llamas" and accept all the
+default project name variants (unless you used a special character in the project name).
