@@ -30,6 +30,7 @@ Then run it like so:
 
     cookiecutter git@github.com:kaedroho/cookiecutter-wagtail-plugin.git
     
-It'll ask you for some details about you. When it asks for your project name, exclude the "Wagtail" prefix.
-For example, if your project is called "Wagtail Llamas", set your project name to "Llamas" and accept all the
-default project name variants (unless you used a special character in the project name).
+It'll ask for some details about you (name and email) and your project.
+
+When it asks for your project name, exclude the "Wagtail" prefix.
+For example, if your project is called "Wagtail Llamas", set your project name to "Llamas" and accept all the default project name variants it generates (unless you used a special character in the project name).
