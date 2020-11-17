@@ -1,0 +1,77 @@
+name: {{ cookiecutter.project_name }} CI{% raw %}
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - 'stable/**'
+
+  pull_request:
+
+jobs:
+  test-sqlite:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - toxenv: py38-dj22-wa211-sqlite
+            python: 3.8
+          - toxenv: py38-dj31-wa211-sqlite
+            python: 3.8
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install Tox
+        run: |
+          python -m pip install tox
+      - name: Test
+        run: |
+          tox
+        env:
+          TOXENV: ${{ matrix.toxenv }}
+
+  test-postgres:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - toxenv: py37-dj22-wa211-postgres
+            python: 3.7
+          - toxenv: py38-dj22-wa211-postgres
+            python: 3.8
+          - toxenv: py37-dj30-wa211-postgres
+            python: 3.7
+          - toxenv: py38-dj30-wa211-postgres
+            python: 3.8
+          - toxenv: py38-dj31-wa211-postgres
+            python: 3.8
+          - toxenv: py38-dj31-wamaster-postgres
+            python: 3.8
+
+    services:
+      postgres:
+        image: postgres:10.8
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install Tox
+        run: |
+          python -m pip install tox
+      - name: Test
+        run: |
+          tox
+        env:
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/wagtail_{% endraw %}{{ cookiecutter.project_name_snake }}{% raw %}
+          TOXENV: ${{ matrix.toxenv }}{% endraw %}
