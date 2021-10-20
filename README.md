@@ -1,6 +1,6 @@
-# cookiecutter-wagtail-plugin
+# cookiecutter-wagtail-packages
 
-A cookiecutter template for building Wagtail plugins.
+A cookiecutter template for building Wagtail add-on packages.
 
 ## What's included
 
