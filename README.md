@@ -1,4 +1,4 @@
-# cookiecutter-wagtail-packages
+# cookiecutter-wagtail-package
 
 A cookiecutter template for building Wagtail add-on packages.
 
