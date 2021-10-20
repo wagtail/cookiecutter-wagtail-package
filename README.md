@@ -28,7 +28,7 @@ Firstly install cookiecutter:
     
 Then run it like so:
 
-    cookiecutter git@github.com:kaedroho/cookiecutter-wagtail-plugin.git
+    cookiecutter git@github.com:wagtail/cookiecutter-wagtail-package.git
     
 It'll ask for some details about you (name and email) and your project.
 
