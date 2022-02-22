@@ -7,7 +7,7 @@ declare module '*.svg' {
 }
 
 // Declare globals provided by Django's JavaScript Catalog
-// For more information, see: https://docs.djangoproject.com/en/3.1/topics/i18n/translation/#module-django.views.i18n
+// For more information, see: https://docs.djangoproject.com/en/stable/topics/i18n/translation/#module-django.views.i18n
 declare global {
     // Wagtail globals
 
@@ -31,16 +31,16 @@ declare global {
 
     // Django i18n utilities
 
-    // https://docs.djangoproject.com/en/3.1/topics/i18n/translation/#gettext
+    // https://docs.djangoproject.com/en/stable/topics/i18n/translation/#gettext
     function gettext(text: string): string;
 
-    // https://docs.djangoproject.com/en/3.1/topics/i18n/translation/#ngettext
+    // https://docs.djangoproject.com/en/stable/topics/i18n/translation/#ngettext
     function ngettext(singular: string, plural: string, count: number): string;
 
-    // https://docs.djangoproject.com/en/3.1/topics/i18n/translation/#interpolate
+    // https://docs.djangoproject.com/en/stable/topics/i18n/translation/#interpolate
     // FIXME export default function interpolate(...): string;
 
-    // https://docs.djangoproject.com/en/3.1/topics/i18n/translation/#get-format
+    // https://docs.djangoproject.com/en/stable/topics/i18n/translation/#get-format
     type FormatType =
         | 'DATE_FORMAT'
         | 'DATE_INPUT_FORMATS'
@@ -59,15 +59,15 @@ declare global {
 
     function get_format(formatType: FormatType): string;
 
-    // https://docs.djangoproject.com/en/3.1/topics/i18n/translation/#gettext_noop
+    // https://docs.djangoproject.com/en/stable/topics/i18n/translation/#gettext_noop
     function gettext_noop(text: string): string;
 
-    // https://docs.djangoproject.com/en/3.1/topics/i18n/translation/#pgettext
+    // https://docs.djangoproject.com/en/stable/topics/i18n/translation/#pgettext
     function pgettext(context: string, text: string): string;
 
-    // https://docs.djangoproject.com/en/3.1/topics/i18n/translation/#npgettext
+    // https://docs.djangoproject.com/en/stable/topics/i18n/translation/#npgettext
     function pgettext(context: string, text: string, count: number): string;
 
-    // https://docs.djangoproject.com/en/3.1/topics/i18n/translation/#pluralidx
+    // https://docs.djangoproject.com/en/stable/topics/i18n/translation/#pluralidx
     function pluralidx(count: number): boolean;
 }
