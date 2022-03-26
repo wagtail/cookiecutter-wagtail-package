@@ -11,7 +11,7 @@ jobs:
 
   prettier:
     docker:
-      - image: circleci/node:14
+      - image: circleci/node:{{ cookiecutter.node_version }}
     steps:
       - checkout:
 
