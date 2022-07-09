@@ -13,7 +13,7 @@
 {% elif cookiecutter.open_source_license == 'GNU General Public License v3' -%}
 {% endif %}
 [![PyPI version](https://badge.fury.io/py/{{ cookiecutter.project_name_kebab }}.svg)](https://badge.fury.io/py/{{ cookiecutter.project_name_kebab }})
-[![Wagtail Hallo CI](https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}/actions/workflows/test.yml/badge.svg)](https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}/actions/workflows/test.yml)
+[![{{ cookiecutter.project_name }} CI](https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}/actions/workflows/test.yml/badge.svg)](https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}/actions/workflows/test.yml)
 
 ## Links
 
