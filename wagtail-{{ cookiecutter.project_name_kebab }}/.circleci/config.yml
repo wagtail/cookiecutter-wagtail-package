@@ -19,7 +19,7 @@ jobs:
         keys:
           - node-modules-{% raw %}{{ .Branch }}-{{ checksum "package-lock.json" }}{% endraw %}
           - node-modules-{% raw %}{{ .Branch }}-{% endraw %}
-          - node-modules-master-
+          - node-modules-main-
 
       - run: npm install
       - run: npm run lint
@@ -37,8 +37,8 @@ jobs:
 
       - type: cache-restore
         keys:
-         - pip-{% raw %}{{ .Branch }}-{% endraw %}
-         - pip-master-
+          - pip-{% raw %}{{ .Branch }}-{% endraw %}
+          - pip-main-
 
       - run: pip install -e .[testing]
 
@@ -66,20 +66,20 @@ jobs:
           command: python ./.circleci/report_nightly_build_failure.py
 
 workflows:
-    version: 2
-    test:
-      jobs:
-        - flake8
-        - prettier
-        - test
+  version: 2
+  test:
+    jobs:
+      - flake8
+      - prettier
+      - test
 
-    nightly:
-      jobs:
-        - nightly-wagtail-test
-      triggers:
-        - schedule:
-            cron: "0 0 * * *"
-            filters:
-              branches:
-                only:
-                  - master
+  nightly:
+    jobs:
+      - nightly-wagtail-test
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
