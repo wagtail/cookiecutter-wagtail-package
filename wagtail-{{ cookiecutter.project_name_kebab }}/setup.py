@@ -3,8 +3,7 @@
 from os import path
 
 from setuptools import find_packages, setup
-
-from wagtail_{{ cookiecutter.project_name_snake }} import __version__
+from wagtail_{{cookiecutter.project_name_snake}} import __version__
 
 
 this_directory = path.abspath(path.dirname(__file__))
