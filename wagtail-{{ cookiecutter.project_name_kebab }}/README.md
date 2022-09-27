@@ -13,16 +13,16 @@
 {%- elif cookiecutter.open_source_license == 'GNU General Public License v3' -%}
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 {% endif %}
-[![PyPI version](https://badge.fury.io/py/{{ cookiecutter.project_name_kebab }}.svg)](https://badge.fury.io/py/{{ cookiecutter.project_name_kebab }})
-[![{{ cookiecutter.project_name }} CI](https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}/actions/workflows/test.yml/badge.svg)](https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}/actions/workflows/test.yml)
+[![PyPI version](https://badge.fury.io/py/wagtail-{{ cookiecutter.project_name_kebab }}.svg)](https://badge.fury.io/py/wagtail-{{ cookiecutter.project_name_kebab }})
+[![{{ cookiecutter.project_name }} CI](https://github.com/{{ cookiecutter.github_username }}/wagtail-{{ cookiecutter.project_name_kebab }}/actions/workflows/test.yml/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/wagtail-{{ cookiecutter.project_name_kebab }}/actions/workflows/test.yml)
 
 ## Links
 
-- [Documentation](https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}/blob/main/README.md)
-- [Changelog](https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}/blob/main/CHANGELOG.md)
-- [Contributing](https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}/blob/main/CHANGELOG.md)
-- [Discussions](https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}/discussions)
-- [Security](https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}/security)
+- [Documentation](https://github.com/{{ cookiecutter.github_username }}/wagtail-{{ cookiecutter.project_name_kebab }}/blob/main/README.md)
+- [Changelog](https://github.com/{{ cookiecutter.github_username }}/wagtail-{{ cookiecutter.project_name_kebab }}/blob/main/CHANGELOG.md)
+- [Contributing](https://github.com/{{ cookiecutter.github_username }}/wagtail-{{ cookiecutter.project_name_kebab }}/blob/main/CHANGELOG.md)
+- [Discussions](https://github.com/{{ cookiecutter.github_username }}/wagtail-{{ cookiecutter.project_name_kebab }}/discussions)
+- [Security](https://github.com/{{ cookiecutter.github_username }}/wagtail-{{ cookiecutter.project_name_kebab }}/security)
 
 ## Supported versions
 
