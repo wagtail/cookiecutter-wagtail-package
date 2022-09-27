@@ -7,7 +7,6 @@
     "project_name_kebab": "{{ cookiecutter.project_name_snake.replace('_', '-') }}",
     "project_name_camel": "{{ cookiecutter.project_name_snake.replace('_', ' ').title().replace(' ', '') }}",
     "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
-    "pypi_username": "{{ cookiecutter.github_username }}",
     "version": "0.1.0",
     "node_version": "16",
     "open_source_license": [
