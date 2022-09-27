@@ -1,4 +1,0 @@
-include LICENSE *.rst *.txt *.md
-graft wagtail_{{ cookiecutter.project_name_snake }}
-global-exclude __pycache__
-global-exclude *.py[co]

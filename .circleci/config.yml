@@ -25,7 +25,8 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - run: pip install -e/tmp/workspace/wagtail-localize[testing]
+      - run: pip install pip>=21.3
+      - run: pip install -e /tmp/workspace/wagtail-localize[testing]
       - run: cd /tmp/workspace/wagtail-localize && python testmanage.py test
 
   python_format:
