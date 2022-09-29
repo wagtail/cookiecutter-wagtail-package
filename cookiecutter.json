@@ -1,12 +1,13 @@
 {
-    "full_name": "Karl Hobley",
-    "email": "karl@kaed.uk",
-    "github_username": "kaedroho",
+    " ": "]\nCookiecutter Wagtail Package - Use a project name without `Wagtail` as the prefix, this will be added for you.\n[Please press enter to continue",
     "project_name": "Localize",
     "project_name_snake": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "project_name_kebab": "{{ cookiecutter.project_name_snake.replace('_', '-') }}",
     "project_name_camel": "{{ cookiecutter.project_name_snake.replace('_', ' ').title().replace(' ', '') }}",
     "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+    "full_name": "Karl Hobley",
+    "email": "karl@kaed.uk",
+    "github_username": "kaedroho",
     "version": "0.1.0",
     "node_version": "16",
     "open_source_license": [
