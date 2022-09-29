@@ -8,7 +8,6 @@
     "full_name": "Karl Hobley",
     "email": "karl@kaed.uk",
     "github_username": "kaedroho",
-    "pypi_username": "{{ cookiecutter.github_username }}",
     "version": "0.1.0",
     "node_version": "16",
     "open_source_license": [
