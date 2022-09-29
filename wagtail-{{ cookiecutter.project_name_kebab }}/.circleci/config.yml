@@ -27,7 +27,7 @@ jobs:
       - type: cache-save
         key: node-modules-{% raw %}{{ .Branch }}-{{ checksum "package-lock.json" }}{% endraw %}
         paths:
-          - "node_modules"
+          - 'node_modules'
 
   test:
     docker:
@@ -45,7 +45,7 @@ jobs:
       - type: cache-save
         key: pip-{% raw %}{{ .Branch }}-{{ epoch }}{% endraw %}
         paths:
-          - "~/.cache/pip"
+          - '~/.cache/pip'
 
       - run: python testmanage.py test
 
@@ -78,7 +78,7 @@ workflows:
       - nightly-wagtail-test
     triggers:
       - schedule:
-          cron: "0 0 * * *"
+          cron: '0 0 * * *'
           filters:
             branches:
               only:

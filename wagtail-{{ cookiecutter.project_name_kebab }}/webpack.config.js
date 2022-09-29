@@ -7,22 +7,15 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ]
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.svg$/,
@@ -30,14 +23,12 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: [
-          'file-loader'
-        ]
-      }
-    ]
+        use: ['file-loader'],
+      },
+    ],
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
+    extensions: ['.tsx', '.ts', '.js'],
   },
   externals: {
     /* These are provided by Wagtail */
@@ -46,7 +37,10 @@ module.exports = {
     'gettext': 'gettext',
   },
   output: {
-    path: path.resolve(__dirname, 'wagtail_{{ cookiecutter.project_name_snake }}/static/wagtail_{{ cookiecutter.project_name_snake }}/js'),
+    path: path.resolve(
+      __dirname,
+      'wagtail_{{ cookiecutter.project_name_snake }}/static/wagtail_{{ cookiecutter.project_name_snake }}/js'
+    ),
     filename: 'wagtail-{{ cookiecutter.project_name_kebab }}.js'
-  }
+  },
 };
