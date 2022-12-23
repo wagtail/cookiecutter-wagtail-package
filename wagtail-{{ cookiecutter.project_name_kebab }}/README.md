@@ -41,8 +41,8 @@
 To make changes to this project, first clone this repository:
 
 ```sh
-git clone git@https://github.com/wagtail/{{ cookiecutter.project_name_kebab }}.git
-cd {{ cookiecutter.project_name_kebab }}
+git clone git@https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_name_kebab }}.git
+cd wagtail-{{ cookiecutter.project_name_kebab }}
 ```
 
 With your preferred virtualenv activated, install testing dependencies:
@@ -63,7 +63,7 @@ Note that this project uses [pre-commit](https://github.com/pre-commit/pre-commi
 # if you don't have it yet, globally
 $ pip install pre-commit
 # go to the project directory
-$ cd {{ cookiecutter.project_name_kebab }}
+$ cd wagtail-{{ cookiecutter.project_name_kebab }}
 # initialize pre-commit
 $ pre-commit install
 
