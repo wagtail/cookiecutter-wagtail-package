@@ -3,8 +3,7 @@
 from os import path
 
 from setuptools import find_packages, setup
-
-from wagtail_{{ cookiecutter.project_name_snake }} import __version__
+from wagtail_{{cookiecutter.project_name_snake}} import __version__
 
 
 this_directory = path.abspath(path.dirname(__file__))
@@ -33,14 +32,17 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Framework :: Django",
-        "Framework :: Django :: 3.0",
-        "Framework :: Django :: 3.1",
         "Framework :: Django :: 3.2",
+        "Framework :: Django :: 4.0",
+        "Framework :: Django :: 4.1",
         "Framework :: Wagtail",
         "Framework :: Wagtail :: 2",
+        "Framework :: Wagtail :: 4",
     ],
-    install_requires=["Django>=3.0,<4.0", "Wagtail>=2.14,<2.16"],
+    install_requires=["Django>=3.0,<4.2", "Wagtail>=2.15,<5.0"],
     extras_require={
         "testing": ["dj-database-url==0.5.0", "freezegun==0.3.15"],
     },

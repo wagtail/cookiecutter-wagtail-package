@@ -39,8 +39,8 @@ module.exports = {
   output: {
     path: path.resolve(
       __dirname,
-      'wagtail_{{ cookiecutter.project_name_snake }}/static/wagtail_{{ cookiecutter.project_name_snake }}/js'
+      'wagtail_{{ cookiecutter.project_name_snake }}/static/wagtail_{{ cookiecutter.project_name_snake }}/js',
     ),
-    filename: 'wagtail-{{ cookiecutter.project_name_kebab }}.js'
+    filename: 'wagtail-{{ cookiecutter.project_name_kebab }}.js',
   },
 };

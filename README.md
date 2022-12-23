@@ -25,11 +25,11 @@ I haven't yet added a question into the cookiecutter config that excludes this. 
 Firstly install cookiecutter:
 
     pip install cookiecutter
-    
+
 Then run it like so:
 
     cookiecutter git@github.com:wagtail/cookiecutter-wagtail-package.git
-    
+
 It'll ask for some details about you (name and email) and your project.
 
 When it asks for your project name, exclude the "Wagtail" prefix.

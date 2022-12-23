@@ -34,3 +34,52 @@
 
 - `pip install {{ cookiecutter.project_name_kebab }}`
 - ...
+
+
+## Contributing
+
+To make changes to this project, first clone this repository:
+
+```sh
+git clone git@https://github.com/{{ cookiecutter.github_username }}/wagtail-{{ cookiecutter.project_name_kebab }}.git
+cd wagtail-{{ cookiecutter.project_name_kebab }}
+```
+
+With your preferred virtualenv activated, install testing dependencies:
+
+#### Using pip
+
+```sh
+pip install --upgrade pip
+pip install -e .[testing] -U
+```
+
+
+### pre-commit
+
+Note that this project uses [pre-commit](https://github.com/pre-commit/pre-commit). To set up locally:
+
+```shell
+# if you don't have it yet, globally
+$ pip install pre-commit
+# go to the project directory
+$ cd wagtail-{{ cookiecutter.project_name_kebab }}
+# initialize pre-commit
+$ pre-commit install
+
+# Optional, run all checks once for this, then the checks will run only on the changed files
+$ pre-commit run --all-files
+```
+
+### How to run tests
+
+Now you can run tests as shown below:
+
+```sh
+tox
+```
+
+or, you can run them for a specific environment `tox -e python3.8-django3.2-wagtail2.15` or specific test
+`tox -e python3.9-django3.2-wagtail2.15-sqlite {{ cookiecutter.project_name_kebab }}.tests.test_file.TestClass.test_method`
+
+To run the test app interactively, use `tox -e interactive`, visit `http://127.0.0.1:8020/admin/` and log in with `admin`/`changeme`.
