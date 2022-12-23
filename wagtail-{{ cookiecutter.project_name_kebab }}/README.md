@@ -41,7 +41,7 @@
 To make changes to this project, first clone this repository:
 
 ```sh
-git clone git@https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_name_kebab }}.git
+git clone git@https://github.com/{{ cookiecutter.github_username }}/wagtail-{{ cookiecutter.project_name_kebab }}.git
 cd wagtail-{{ cookiecutter.project_name_kebab }}
 ```
 
