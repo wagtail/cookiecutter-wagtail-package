@@ -6,7 +6,7 @@ jobs:
       - image: circleci/python:3.8
     steps:
       - checkout
-      - run: pip install flake8
+      - run: python -m pip install flake8
       - run: flake8 wagtail_{{ cookiecutter.project_name_snake }}
 
   prettier:
@@ -40,7 +40,7 @@ jobs:
           - pip-{% raw %}{{ .Branch }}-{% endraw %}
           - pip-main-
 
-      - run: pip install flit
+      - run: python -m pip install flit
       - run: flit install --deps production --extras testing
 
       - type: cache-save
@@ -57,9 +57,9 @@ jobs:
       - checkout
       - run: git clone git@github.com:wagtail/wagtail.git
 
-      - run: pip install flit
+      - run: python -m pip install flit
       - run: flit install --deps production --extras testing
-      - run: pip install ./wagtail
+      - run: python -m pip install ./wagtail
 
       - run: python testmanage.py test
 

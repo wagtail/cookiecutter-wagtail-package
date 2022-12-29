@@ -32,7 +32,7 @@
 
 ## Installation
 
-- `pip install {{ cookiecutter.project_name_kebab }}`
+- `python -m pip install {{ cookiecutter.project_name_kebab }}`
 - ...
 
 ## Contributing
@@ -51,14 +51,14 @@ With your preferred virtualenv activated, install testing dependencies:
 #### Using pip
 
 ```sh
-pip install --upgrade pip>=21.3
-pip install -e .[testing] -U
+python -m pip install --upgrade pip>=21.3
+python -m pip install -e .[testing] -U
 ```
 
 #### Using flit
 
 ```sh
-pip install flit
+python -m pip install flit
 flit install
 ```
 
@@ -68,7 +68,7 @@ Note that this project uses [pre-commit](https://github.com/pre-commit/pre-commi
 
 ```shell
 # if you don't have it yet, globally
-$ pip install pre-commit
+$ python -m pip install pre-commit
 # go to the project directory
 $ cd wagtail-{{ cookiecutter.project_name_kebab }}
 # initialize pre-commit
