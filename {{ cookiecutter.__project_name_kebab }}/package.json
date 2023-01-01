@@ -1,8 +1,8 @@
 {
-  "name": "wagtail-{{ cookiecutter.project_name_kebab }}",
+  "name": "{{ cookiecutter.__project_name_kebab }}",
   "version": "{{ cookiecutter.version }}",
   "description": "{{ cookiecutter.project_short_description }}",
-  "main": "wagtail_{{ cookiecutter.project_name_snake }}/static_src/main.tsx",
+  "main": "{{ cookiecutter.__project_name_snake }}/static_src/main.tsx",
   "scripts": {
     "start": "webpack --config ./webpack.config.js --mode development --progress --watch",
     "build": "webpack --config ./webpack.config.js --mode production",

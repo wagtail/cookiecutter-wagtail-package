@@ -9,7 +9,7 @@
     "esModuleInterop": true
   },
   "files": [
-    "wagtail_{{ cookiecutter.project_name_snake }}/static_src/main.tsx",
-    "wagtail_{{ cookiecutter.project_name_snake }}/static_src/custom.d.ts"
+    "{{ cookiecutter.__project_name_snake }}/static_src/main.tsx",
+    "{{ cookiecutter.__project_name_snake }}/static_src/custom.d.ts"
   ]
 }

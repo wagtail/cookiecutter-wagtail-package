@@ -3,7 +3,7 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "wagtail-{{ cookiecutter.project_name_kebab }}"
+name = "{{ cookiecutter.__project_name_kebab }}"
 authors = [{name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}"}]
 description = "{{ cookiecutter.project_short_description }}"
 readme = "README.md"
@@ -54,16 +54,16 @@ testing = [
 ]
 
 [project.urls]
-Home = "https://github.com/{{ cookiecutter.github_username }}/wagtail-{{ cookiecutter.project_name_kebab }}"
+Home = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}"
 
 [tool.flit.module]
-name = "wagtail_{{ cookiecutter.project_name_snake }}"
+name = "{{ cookiecutter.__project_name_snake }}"
 
 [tool.flit.sdist]
 exclude = [
-    "wagtail_{{ cookiecutter.project_name_snake }}/static_src",
-    "wagtail_{{ cookiecutter.project_name_snake }}/test",
-    "wagtail_{{ cookiecutter.project_name_snake }}/static/wagtail_{{ cookiecutter.project_name_snake }}/js/.gitignore",
+    "{{ cookiecutter.__project_name_snake }}/static_src",
+    "{{ cookiecutter.__project_name_snake }}/test",
+    "{{ cookiecutter.__project_name_snake }}/static/{{ cookiecutter.__project_name_snake }}/js/.gitignore",
     "testmanage.py",
     ".*",
     "*.js",
