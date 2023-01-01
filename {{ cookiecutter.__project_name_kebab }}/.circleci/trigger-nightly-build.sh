@@ -5,4 +5,4 @@
 
 curl -u ${CIRCLE_API_USER_TOKEN}: \
      -d build_parameters[CIRCLE_JOB]=nightly-wagtail-test \
-     https://circleci.com/api/v1.1/project/github/{{ cookiecutter.github_username }}/wagtail-{{ cookiecutter.project_name_kebab }}/tree/main
+     https://circleci.com/api/v1.1/project/github/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/tree/main

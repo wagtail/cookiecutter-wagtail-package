@@ -32,8 +32,8 @@ ALLOWED_HOSTS = ["localhost", "testserver"]
 # Application definition
 
 INSTALLED_APPS = [
-    "wagtail_{{ cookiecutter.project_name_snake }}",
-    "wagtail_{{ cookiecutter.project_name_snake }}.test",
+    "{{ cookiecutter.__project_name_snake }}",
+    "{{ cookiecutter.__project_name_snake }}.test",
     "wagtail.contrib.search_promotions",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -72,7 +72,7 @@ MIDDLEWARE = [
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
-ROOT_URLCONF = "wagtail_{{ cookiecutter.project_name_snake }}.test.urls"
+ROOT_URLCONF = "{{ cookiecutter.__project_name_snake }}.test.urls"
 
 TEMPLATES = [
     {
@@ -111,7 +111,7 @@ PASSWORD_HASHERS = ("django.contrib.auth.hashers.MD5PasswordHasher",)
 
 DATABASES = {
     "default": dj_database_url.config(
-        default="sqlite:///test_wagtail_{{ cookiecutter.project_name_snake }}.db"
+        default="sqlite:///test_{{ cookiecutter.__project_name_snake }}.db"
     ),
 }
 

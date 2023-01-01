@@ -9,7 +9,7 @@ import warnings
 from django.core.management import execute_from_command_line
 
 
-os.environ["DJANGO_SETTINGS_MODULE"] = "wagtail_{{ cookiecutter.project_name_snake }}.test.settings"
+os.environ["DJANGO_SETTINGS_MODULE"] = "{{ cookiecutter.__project_name_snake }}.test.settings"
 
 
 def make_parser():

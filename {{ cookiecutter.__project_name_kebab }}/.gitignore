@@ -2,14 +2,14 @@ __pycache__/
 *.py[co]
 /build
 /dist
-/wagtail_{{ cookiecutter.project_name_snake }}.egg-info
+/{{ cookiecutter.__project_name_snake }}.egg-info
 /.coverage
 /htmlcov
 /.tox
 /venv
 /.vscode
 /site
-/test_wagtail_{{ cookiecutter.project_name_snake }}.db
+/test_{{ cookiecutter.__project_name_snake }}.db
 /node_modules
 /test-static
 /test-media

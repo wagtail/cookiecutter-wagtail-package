@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './wagtail_{{ cookiecutter.project_name_snake }}/static_src/main.tsx',
+  entry: './{{ cookiecutter.__project_name_snake }}/static_src/main.tsx',
   module: {
     rules: [
       {
@@ -39,8 +39,8 @@ module.exports = {
   output: {
     path: path.resolve(
       __dirname,
-      'wagtail_{{ cookiecutter.project_name_snake }}/static/wagtail_{{ cookiecutter.project_name_snake }}/js',
+      '{{ cookiecutter.__project_name_snake }}/static/{{ cookiecutter.__project_name_snake }}/js',
     ),
-    filename: 'wagtail-{{ cookiecutter.project_name_kebab }}.js',
+    filename: '{{ cookiecutter.__project_name_kebab }}.js',
   },
 };

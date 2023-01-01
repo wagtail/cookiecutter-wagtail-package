@@ -1,6 +1,6 @@
 [run]
 branch = True
-include = wagtail_{{ cookiecutter.project_name_snake }}/*
+include = {{ cookiecutter.__project_name_snake }}/*
 omit = */migrations/*,*/tests/*
 
 [report]
