@@ -32,7 +32,7 @@
 
 ## Installation
 
-- `python -m pip install {{ cookiecutter.project_name_kebab }}`
+- `python -m pip install {{ cookiecutter.__project_name_kebab }}`
 - ...
 
 ## Contributing
@@ -87,6 +87,6 @@ tox
 ```
 
 or, you can run them for a specific environment `tox -e python3.8-django3.2-wagtail2.15` or specific test
-`tox -e python3.9-django3.2-wagtail2.15-sqlite {{ cookiecutter.project_name_kebab }}.tests.test_file.TestClass.test_method`
+`tox -e python3.9-django3.2-wagtail2.15-sqlite {{ cookiecutter.__project_name_kebab }}.tests.test_file.TestClass.test_method`
 
 To run the test app interactively, use `tox -e interactive`, visit `http://127.0.0.1:8020/admin/` and log in with `admin`/`changeme`.
