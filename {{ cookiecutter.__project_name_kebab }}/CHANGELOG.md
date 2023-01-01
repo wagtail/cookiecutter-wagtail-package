@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [{{ cookiecutter.version }}] - {% now 'local', '%Y-%m-%d' %}
+## [0.1.0] - {% now 'local', '%Y-%m-%d' %}
 
 ### Added
 
