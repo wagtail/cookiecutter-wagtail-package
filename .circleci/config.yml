@@ -16,7 +16,7 @@ jobs:
       - persist_to_workspace:
           root: ~/project/
           paths:
-            - wagtail-localize/*
+            - wagtail-llama-savers-llama-save/*
 
   python:
     executor:
@@ -26,8 +26,8 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - run: python -m pip install pip>=21.3
-      - run: python -m pip install -e /tmp/workspace/wagtail-localize[testing]
-      - run: cd /tmp/workspace/wagtail-localize && python testmanage.py test
+      - run: python -m pip install -e /tmp/workspace/wagtail-llama-savers-llama-save[testing]
+      - run: cd /tmp/workspace/wagtail-llama-savers-llama-save && python testmanage.py test
 
   python_format:
     executor:
@@ -37,7 +37,7 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - run: python -m pip install flake8
-      - run: cd /tmp/workspace/wagtail-localize && flake8
+      - run: cd /tmp/workspace/wagtail-llama-savers-llama-save && flake8
 
   javascript:
     executor:
@@ -46,12 +46,12 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - run: cd /tmp/workspace/wagtail-localize && npm install
-      - run: cd /tmp/workspace/wagtail-localize && npm run build
+      - run: cd /tmp/workspace/wagtail-llama-savers-llama-save && npm install
+      - run: cd /tmp/workspace/wagtail-llama-savers-llama-save && npm run build
       - persist_to_workspace:
           root: /tmp/workspace
           paths:
-            - wagtail-localize/*
+            - wagtail-llama-savers-llama-save/*
 
   javascript_format:
     executor:
@@ -60,7 +60,7 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - run: cd /tmp/workspace/wagtail-localize && npm run lint
+      - run: cd /tmp/workspace/wagtail-llama-savers-llama-save && npm run lint
 
 workflows:
   main:
