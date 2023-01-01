@@ -49,8 +49,7 @@ dependencies = [
 ]
 [project.optional-dependencies]
 testing = [
-    "dj-database-url==1.2.0",
-    "freezegun==1.2.2"
+    "dj-database-url==1.2.0"
 ]
 
 [project.urls]
