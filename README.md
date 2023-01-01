@@ -24,7 +24,7 @@ I haven't yet added a question into the cookiecutter config that excludes this. 
 
 Firstly install cookiecutter:
 
-    python -m pip install cookiecutter
+    python -m pip install "cookiecutter>=2"
 
 Then run it like so:
 
