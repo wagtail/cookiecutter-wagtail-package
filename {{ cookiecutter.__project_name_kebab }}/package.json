@@ -1,6 +1,6 @@
 {
   "name": "{{ cookiecutter.__project_name_kebab }}",
-  "version": "{{ cookiecutter.version }}",
+  "version": "0.1.0",
   "description": "{{ cookiecutter.project_short_description }}",
   "main": "{{ cookiecutter.__project_name_snake }}/static_src/main.tsx",
   "scripts": {
