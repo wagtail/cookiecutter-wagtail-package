@@ -110,9 +110,7 @@ PASSWORD_HASHERS = ("django.contrib.auth.hashers.MD5PasswordHasher",)
 # https://docs.djangoproject.com/en/stable/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default="sqlite:///test_{{ cookiecutter.__project_name_snake }}.db"
-    ),
+    "default": dj_database_url.config(default="sqlite:///test_{{ cookiecutter.__project_name_snake }}.db"),
 }
 
 
