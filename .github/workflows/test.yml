@@ -1,0 +1,79 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - run: python -m pip install cookiecutter
+      - run: python -m cookiecutter . --no-input
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: rendered-project
+          path: wagtail-llama-save
+
+  lint:
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: rendered-project
+          path: /tmp/wagtail-llama-save
+
+      - working-directory: /tmp/wagtail-llama-save
+        run: |
+          git init
+          git add .
+          python -m pip install pre-commit
+          pre-commit run --all-files --show-diff-on-failure --color=always
+
+  test:
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: rendered-project
+          path: wagtail-llama-save
+
+      - working-directory: wagtail-llama-save
+        run: python -m pip install -e .[testing]
+      - working-directory: wagtail-llama-save
+        run: python testmanage.py test
+
+  build-js:
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: rendered-project
+          path: wagtail-llama-save
+
+      - working-directory: wagtail-llama-save
+        run: npm install
+      - working-directory: wagtail-llama-save
+        run: npm run build
