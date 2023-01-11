@@ -36,7 +36,6 @@ jobs:
       - working-directory: /tmp/wagtail-llama-save
         run: |
           git init
-          git add .
           python -m pip install pre-commit
           pre-commit run --all-files --show-diff-on-failure --color=always
 
