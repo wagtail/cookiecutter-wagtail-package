@@ -29,11 +29,23 @@ jobs:
           python-version: '3.11'
 
       - uses: actions/download-artifact@v3
+        # Restore the rendered areifact to a directory outside the repo checkout.
+        # Even if we invoke pre-commit from in a subdirectory
+        # it tries to lint the whole repo including the raw templates.
         with:
           name: rendered-project
           path: /tmp/wagtail-llama-save
 
-      - working-directory: /tmp/wagtail-llama-save
+      - name: Run Lint Checks
+        working-directory: /tmp/wagtail-llama-save
+        # In order to get pre-commit to see any files,
+        # we have to initialize a git repo
+        # and at least stage the files we want to check.
+        # Otherwise pre-commit will stash everything and
+        # tell us there are no files to check.
+        # refs
+        # https://github.com/wagtail/cookiecutter-wagtail-package/pull/45#discussion_r1064195179
+        # https://github.com/pre-commit/pre-commit/issues/848
         run: |
           git init
           git add .
