@@ -1,5 +1,5 @@
 """
-Called by CircleCI when the nightly build fails.
+Called by GH Actions when the nightly build fails.
 
 This reports an error to the #nightly-build-failures Slack channel.
 """
@@ -13,7 +13,8 @@ if "SLACK_WEBHOOK_URL" in os.environ:
     response = requests.post(
         os.environ["SLACK_WEBHOOK_URL"],
         json={
-            "text": "A Nightly build failed. See " + os.environ["CIRCLE_BUILD_URL"],
+            "text": "A Nightly build failed. See https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/actions/runs/"
+            + os.environ["GITHUB_RUN_ID"],
         },
     )
 
