@@ -85,7 +85,8 @@ jobs:
           name: rendered-project
           path: wagtail-llama-save
 
-      - working-directory: wagtail-llama-save
-        run: npm install
-      - working-directory: wagtail-llama-save
-        run: npm run build
+      - name: Build JS
+        working-directory: wagtail-llama-save
+        run: |
+          npm install --no-optional --no-audit --progress=false
+          npm run build
