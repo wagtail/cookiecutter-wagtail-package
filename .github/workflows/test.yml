@@ -87,5 +87,5 @@ jobs:
       - name: Build JS
         working-directory: wagtail-llama-save
         run: |
-          npm install --no-optional --no-audit --progress=false
+          npm install --omit=optional --no-audit --progress=false
           npm run build
