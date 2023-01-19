@@ -1,3 +1,4 @@
+{% raw -%}
 name: Nightly Wagtail Test
 
 on:
@@ -33,3 +34,4 @@ jobs:
         if: ${{ failure() && env.WEBHOOK_EXISTS == 'true' }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+{%- endraw %}
