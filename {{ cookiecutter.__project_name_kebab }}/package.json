@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack --config ./webpack.config.js --mode development --progress --watch",
     "build": "webpack --config ./webpack.config.js --mode production",
-    "format": "git ls-files --others --cached | xargs pre-commit run --files"
+    "format": "git ls-files --others --cached --exclude-standard | xargs pre-commit run --files"
   },
   "author": "",
   "license": "{% if cookiecutter.open_source_license == 'MIT license' -%}MIT{% elif cookiecutter.open_source_license == 'BSD license' %}BSD{% elif cookiecutter.open_source_license == 'ISC license' -%}ISC{% elif cookiecutter.open_source_license == 'Apache Software License 2.0' -%}Apache{% elif cookiecutter.open_source_license == 'GNU General Public License v3' -%}{% endif %}",
