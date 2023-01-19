@@ -6,11 +6,7 @@
   "scripts": {
     "start": "webpack --config ./webpack.config.js --mode development --progress --watch",
     "build": "webpack --config ./webpack.config.js --mode production",
-    "format": "prettier --write '**/?(.)*.{css,scss,js,ts,tsx,json,yaml,yml}'",
-    "lint:js": "eslint --ext .js,.ts,.tsx --report-unused-disable-directives --max-warnings 16 ./",
-    "lint:css": "stylelint **/*.scss",
-    "lint:format": "prettier --check '**/?(.)*.{css,scss,js,ts,tsx,json,yaml,yml}'",
-    "lint": "npm run lint:js && npm run lint:css && npm run lint:format"
+    "format": "git ls-files --others --cached | xargs pre-commit run --files"
   },
   "author": "",
   "license": "{% if cookiecutter.open_source_license == 'MIT license' -%}MIT{% elif cookiecutter.open_source_license == 'BSD license' %}BSD{% elif cookiecutter.open_source_license == 'ISC license' -%}ISC{% elif cookiecutter.open_source_license == 'Apache Software License 2.0' -%}Apache{% elif cookiecutter.open_source_license == 'GNU General Public License v3' -%}{% endif %}",
@@ -27,7 +23,6 @@
     "file-loader": "^6.2.0",
     "postcss-loader": "^6.2.1",
     "postcss": "^8.4.5",
-    "prettier": "^2.5.1",
     "sass-loader": "^12.4.0",
     "sass": "^1.45.3",
     "stylelint": "^14.5.1",

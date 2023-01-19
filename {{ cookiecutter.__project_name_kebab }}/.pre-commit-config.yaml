@@ -38,7 +38,6 @@ repos:
           - flake8-bugbear
           - flake8-comprehensions
   - repo: https://github.com/pre-commit/mirrors-prettier
-    # note: keep in sync with the version from package.json
     rev: 'v1.18.2'
     hooks:
       - id: prettier
