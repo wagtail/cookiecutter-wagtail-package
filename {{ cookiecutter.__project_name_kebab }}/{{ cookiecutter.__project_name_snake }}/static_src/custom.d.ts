@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export {};
 
 // Allows SVG files to be imported and used in TypeScript
