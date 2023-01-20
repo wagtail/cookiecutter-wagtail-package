@@ -42,6 +42,32 @@ repos:
     hooks:
       - id: prettier
         types_or: [css, scss, javascript, ts, tsx, json, yaml]
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    # eslint config is in .eslintrc.js
+    rev: v8.20.0
+    hooks:
+      - id: eslint
+        additional_dependencies:
+          - 'eslint@8.20.0'
+          - 'eslint-config-airbnb@19.0.4'
+          - 'eslint-plugin-import@2.27.5'
+          - 'eslint-plugin-jsx-a11y@6.7.1'
+          - 'eslint-plugin-react@7.32.1'
+          - 'eslint-plugin-react-hooks@4.6.0'
+          - '@typescript-eslint/eslint-plugin@5.12.1'
+          - '@typescript-eslint/parser@5.12.1'
+          - '@wagtail/eslint-config-wagtail@0.4.0'
+        files: \.(js|jsx|ts|tsx)$
+        types: [file]
+  - repo: https://github.com/awebdeveloper/pre-commit-stylelint
+    # stylelint config is in .stylelintrc.js
+    rev: 8f63da497580898a7e0ceef6bf9e72cc0af07828
+    hooks:
+      - id: stylelint
+        files: \.(scss)$
+        additional_dependencies:
+          - 'stylelint@14.5.1'
+          - '@wagtail/stylelint-config-wagtail@0.5.0'
   - repo: https://github.com/asottile/blacken-docs
     rev: v1.12.1
     hooks:
