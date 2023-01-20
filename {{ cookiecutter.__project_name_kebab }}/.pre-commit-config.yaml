@@ -38,7 +38,8 @@ repos:
           - flake8-bugbear
           - flake8-comprehensions
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: 'v1.18.2'
+    # prettier config is in prettier.config.js
+    rev: 'v2.5.1'
     hooks:
       - id: prettier
         types_or: [css, scss, javascript, ts, tsx, json, yaml]
