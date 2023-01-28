@@ -75,7 +75,7 @@ $ cd {{ cookiecutter.__project_name_kebab }}
 $ pre-commit install
 
 # Optional, run all checks once for this, then the checks will run only on the changed files
-$ pre-commit run --all-files
+$ git ls-files --others --cached --exclude-standard | xargs pre-commit run --files
 ```
 
 ### How to run tests
