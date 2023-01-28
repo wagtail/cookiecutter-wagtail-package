@@ -67,7 +67,7 @@ flit install
 Note that this project uses [pre-commit](https://github.com/pre-commit/pre-commit). To set up locally:
 
 ```shell
-# if you don't have it yet, globally
+# install pre-commit
 $ python -m pip install pre-commit
 # go to the project directory
 $ cd {{ cookiecutter.__project_name_kebab }}
