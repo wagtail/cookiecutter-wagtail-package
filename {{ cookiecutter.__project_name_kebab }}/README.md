@@ -64,11 +64,10 @@ flit install
 
 ### pre-commit
 
-Note that this project uses [pre-commit](https://github.com/pre-commit/pre-commit). To set up locally:
+Note that this project uses [pre-commit](https://github.com/pre-commit/pre-commit).
+It is included in the project testing requirements. To set up locally:
 
 ```shell
-# install pre-commit
-$ python -m pip install pre-commit
 # go to the project directory
 $ cd {{ cookiecutter.__project_name_kebab }}
 # initialize pre-commit
