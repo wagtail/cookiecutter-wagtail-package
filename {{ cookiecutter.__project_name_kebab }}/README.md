@@ -64,18 +64,17 @@ flit install
 
 ### pre-commit
 
-Note that this project uses [pre-commit](https://github.com/pre-commit/pre-commit). To set up locally:
+Note that this project uses [pre-commit](https://github.com/pre-commit/pre-commit).
+It is included in the project testing requirements. To set up locally:
 
 ```shell
-# if you don't have it yet, globally
-$ python -m pip install pre-commit
 # go to the project directory
 $ cd {{ cookiecutter.__project_name_kebab }}
 # initialize pre-commit
 $ pre-commit install
 
 # Optional, run all checks once for this, then the checks will run only on the changed files
-$ pre-commit run --all-files
+$ git ls-files --others --cached --exclude-standard | xargs pre-commit run --files
 ```
 
 ### How to run tests
