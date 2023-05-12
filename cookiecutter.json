@@ -11,7 +11,7 @@
     "full_name": "Fred Bloggs",
     "email": "fred@example.com",
     "github_username": "wagtail",
-    "node_version": "16",
+    "use_frontend": "y",
     "open_source_license": [
         "BSD license",
         "MIT license",

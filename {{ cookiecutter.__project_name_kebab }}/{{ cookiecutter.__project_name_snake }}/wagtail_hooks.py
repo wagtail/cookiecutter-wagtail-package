@@ -11,8 +11,10 @@ def register_admin_urls():
             JavaScriptCatalog.as_view(packages=["{{ cookiecutter.__project_name_snake }}"]),
             name="javascript_catalog",
         ),
-        # Add your other URLs here, and they will appear under `/admin/{{ cookiecutter.__project_name_snake_without_prefix }}/`
-        # Note: you do not need to check for authentication in views added here, Wagtail does this for you!
+        # Add your other URLs here, and they will appear under
+        # `/admin/{{ cookiecutter.__project_name_snake_without_prefix }}/`
+        # Note: you do not need to check for authentication in views added here, Wagtail
+        # does this for you!
     ]
 
     return [

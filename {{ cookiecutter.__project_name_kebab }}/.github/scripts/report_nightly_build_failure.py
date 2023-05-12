@@ -13,14 +13,19 @@ if "SLACK_WEBHOOK_URL" in os.environ:
     response = requests.post(
         os.environ["SLACK_WEBHOOK_URL"],
         json={
-            "text": "A Nightly build failed. See https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/actions/runs/"
-            + os.environ["GITHUB_RUN_ID"],
+            "text": (
+                "A Nightly build failed. See "
+                "https://github.com/{{ cookiecutter.github_username }}/"
+                "{{ cookiecutter.__project_name_kebab }}/actions/runs/"
+                f'{os.environ["GITHUB_RUN_ID"]}',
+            )
         },
     )
 
-    print("Slack responded with:", response)
+    print(f"Slack responded with:{response}")
 
 else:
     print(
-        "Unable to report to #nightly-build-failures slack channel because SLACK_WEBHOOK_URL is not set"
+        "Unable to report to #nightly-build-failures slack channel because "
+        "SLACK_WEBHOOK_URL is not set"
     )
