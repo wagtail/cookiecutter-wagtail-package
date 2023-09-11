@@ -29,7 +29,7 @@ jobs:
           python-version: '3.11'
 
       - uses: actions/download-artifact@v3
-        # Restore the rendered areifact to a directory outside the repo checkout.
+        # Restore the rendered artifact to a directory outside the repo checkout.
         # Even if we invoke pre-commit from in a subdirectory
         # it tries to lint the whole repo including the raw templates.
         with:
