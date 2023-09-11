@@ -51,8 +51,8 @@ dependencies = [
 ]
 [project.optional-dependencies]
 testing = [
-    "dj-database-url==1.2.0",
-    "pre-commit>=2.21.0,<3.0"
+    "dj-database-url==2.1.0",
+    "pre-commit==3.4.0"
 ]
 
 [project.urls]
