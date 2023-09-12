@@ -26,7 +26,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.8'
-      - uses: pre-commit/action@v2.0.3
+      - uses: pre-commit/action@v3.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -35,16 +35,18 @@ jobs:
     needs: lint
     strategy:
       matrix:
-        python: ['3.7', '3.8', '3.9']
-        django: ['3.2']
-        wagtail: ['2.15', '4.0', '4.1']
-        include:
-          - python: '3.10'
-            django: '4.1'
+        python: ['3.8', '3.9', '3.10', '3.11']
+        django: ['3.2', '4.0', '4.1', '4.2']
+        wagtail: ['4.1', '4.2', '5.0', '5.1']
+        exclude:
+          - django: '4.0'
+            wagtail: '5.0'
+          - django: '4.0'
+            wagtail: '5.1'
+          - django: '4.2'
             wagtail: '4.1'
-          - python: '3.11'
-            django: '4.1'
-            wagtail: '4.1'
+          - django: '4.2'
+            wagtail: '4.2'
 
     steps:
       - uses: actions/checkout@v3
@@ -67,20 +69,19 @@ jobs:
     needs: lint
     strategy:
       matrix:
-        python: ['3.7', '3.8', '3.9']
-        django: ['3.2']
-        wagtail: ['2.15', '4.0', '4.1']
+        python: ['3.8', '3.9', '3.10', '3.11']
+        django: ['3.2', '4.0', '4.1', '4.2']
+        wagtail: ['4.1', '4.2', '5.0', '5.1']
         experimental: [false]
-        include:
-          - python: '3.9'
-            django: '4.0'
-            wagtail: '4.0'
-          - python: '3.10'
-            django: '4.0'
+        exclude:
+          - django: '4.0'
+            wagtail: '5.0'
+          - django: '4.0'
+            wagtail: '5.1'
+          - django: '4.2'
             wagtail: '4.1'
-          - python: '3.11'
-            django: '4.1'
-            wagtail: '4.1'
+          - django: '4.2'
+            wagtail: '4.2'
 
     services:
       postgres:
