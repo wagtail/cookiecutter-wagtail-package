@@ -10,7 +10,7 @@ This creates a simple Python/Django app with a nested "test" app.
 
 This creates Github Workflows for:
 
-- Running tests and linters on pushes and Pull Requests
+- Running tests and linters on pushes and pull requests
 - Running tests nightly against latest Wagtail version
 - Pushing packages to PyPI when GitHub releases are created
 
