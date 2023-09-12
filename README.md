@@ -8,9 +8,11 @@ This creates a simple Python/Django app with a nested "test" app.
 
 ### CI
 
-This contains CI configs for both CircleCI and Github Actions.
-We use two CI services simultaneously to allow fast response times (CircleCI)
-while also allowing us to run a large test matrix at the same time (Github Actions).
+This creates Github Workflows for:
+
+- Running tests and linters on pushes and Pull Requests
+- Running tests nightly against latest Wagtail version
+- Pushing packages to PyPI when GitHub releases are created
 
 ### Frontend tooling
 
