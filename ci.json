@@ -1,0 +1,21 @@
+{
+  "cookiecutter": {
+    " ": "]\nCookiecutter Wagtail Package\nUse a project name without `Wagtail` as the prefix, this will be added for you.\n[Please press enter to continue",
+    "project_name": "Llama Save",
+    "__project_name_snake_without_prefix": "llama_save",
+    "__project_name_kebab_without_prefix": "llama-save",
+    "__project_name_camel_without_prefix": "LlamaSave",
+    "__project_name_snake": "wagtail_llama_save",
+    "__project_name_kebab": "wagtail-llama-save",
+    "__project_name_camel": "WagtailLlamaSave",
+    "project_short_description": "A one line description of your package.",
+    "full_name": "Fred Bloggs",
+    "email": "fred@example.com",
+    "github_username": "wagtail",
+    "node_version": "16",
+    "open_source_license": "BSD license",
+    "use_frontend": "y",
+    "_template": ".",
+    "_output_dir": "."
+  }
+}
