@@ -20,7 +20,7 @@ This includes a simple webpack setup with TypeScript, React, styled-components, 
 
 Note that React is pinned to 16.x because on production it uses the same React library as Wagtail to reduce bundle size.
 
-This can be included by answering "yes" to the `use_frontend` question.
+This can be excluded by answering "no" to the `use_frontend` question.
 
 ## How to use
 
