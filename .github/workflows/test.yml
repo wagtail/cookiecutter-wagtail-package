@@ -12,7 +12,7 @@ jobs:
           python-version: '3.11'
 
       - run: python -m pip install cookiecutter
-      - run: python -m cookiecutter . --replay-file ci.json
+      - run: python -m cookiecutter . --no-input
 
       - uses: actions/upload-artifact@v3
         with:
