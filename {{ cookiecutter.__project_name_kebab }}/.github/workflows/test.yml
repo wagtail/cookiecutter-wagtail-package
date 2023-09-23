@@ -46,7 +46,7 @@ jobs:
       - name: Install
         run: |
           python -m pip install --upgrade pip setuptools wheel
-          python -m pip install -r requirements-ci.txt
+          python -m pip install .[ci]
       - name: Test
         run: tox
         env:
@@ -77,7 +77,7 @@ jobs:
       - name: Install
         run: |
           python -m pip install --upgrade pip setuptools wheel
-          python -m pip install -r requirements-ci.txt
+          python -m pip install .[ci]
       - name: Test
         run: tox
         env:
