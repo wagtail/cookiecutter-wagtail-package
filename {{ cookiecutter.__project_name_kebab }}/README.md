@@ -20,7 +20,7 @@
 
 - [Documentation](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/blob/main/README.md)
 - [Changelog](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/blob/main/CHANGELOG.md)
-- [Contributing](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/blob/main/CHANGELOG.md)
+- [Contributing](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/blob/main/CONTRIBUTING.md)
 - [Discussions](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/discussions)
 - [Security](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/security)
 
