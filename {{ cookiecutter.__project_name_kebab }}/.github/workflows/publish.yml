@@ -33,9 +33,7 @@ jobs:
         run: python -m flit build
 
       - name: Publish to PyPI
-        env:
-          FLIT_USERNAME: '__token__'
-          FLIT_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-          FLIT_INDEX_URL: https://upload.pypi.org/legacy/
-        run: python -m flit publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          print-hash: true
 {%- endraw %}

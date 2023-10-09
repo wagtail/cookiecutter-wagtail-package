@@ -12,7 +12,9 @@ This creates Github Workflows for:
 
 - Running tests and linters on pushes and pull requests
 - Running tests nightly against latest Wagtail version
-- Pushing packages to PyPI when GitHub releases are created
+- Pushing packages to PyPI when GitHub releases are created. This requires two additional setup steps before it can be used:
+  - Create a pending publisher in PyPI: https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/
+  - Create an environment called "publish" in GitHub: https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#creating-an-environment
 
 ### Frontend tooling
 
