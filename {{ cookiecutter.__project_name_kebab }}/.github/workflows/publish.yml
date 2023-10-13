@@ -39,7 +39,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     permissions:
-      contents: read # to fetch code (actions/checkout)
+      contents: none
       id-token: write # required for trusted publishing
     environment: publish
     steps:
