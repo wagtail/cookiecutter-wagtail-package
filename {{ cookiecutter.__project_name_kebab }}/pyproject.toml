@@ -11,19 +11,7 @@ license = {file = "LICENSE"}
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
-    {% if cookiecutter.open_source_license == 'MIT license' -%}
-    "License :: OSI Approved :: MIT License",
-    {%- elif cookiecutter.open_source_license == 'BSD 3-Clause license' -%}
-    "License :: OSI Approved :: BSD License",
-    {%- elif cookiecutter.open_source_license == 'ISC license' -%}
-    "License :: OSI Approved :: ISC License (ISCL)",
-    {%- elif cookiecutter.open_source_license == 'Apache Software License 2.0' -%}
-    License :: OSI Approved :: Apache Software License",
-    {%- elif cookiecutter.open_source_license == 'GNU General Public License v3' -%}
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-    {%- elif cookiecutter.open_source_license == 'Not open source' -%}
-    "License :: Other/Proprietary License",
-    {%- endif %}
+    "{{ cookiecutter.__license_options_pypi[cookiecutter.open_source_license] }}",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
