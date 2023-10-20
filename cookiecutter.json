@@ -28,5 +28,13 @@
         "GNU General Public License v3": "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Not open source": "License :: Other/Proprietary License"
     },
+    "__license_options_npm": {
+        "BSD 3-Clause license": "BSD-3-Clause",
+        "MIT license": "MIT",
+        "ISC license": "ISC",
+        "Apache Software License 2.0": "Apache-2.0",
+        "GNU General Public License v3": "GPL-3.0-only",
+        "Not open source": "UNLICENSED"
+    },
     "use_frontend": "y"
 }

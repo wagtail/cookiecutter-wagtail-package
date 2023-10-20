@@ -8,7 +8,7 @@
     "build": "webpack --config ./webpack.config.js --mode production"
   },
   "author": "{{ cookiecutter.full_name }}",
-  "license": "{% if cookiecutter.open_source_license == 'MIT license' -%}MIT{% elif cookiecutter.open_source_license == 'BSD 3-Clause license' %}BSD-3-Clause{% elif cookiecutter.open_source_license == 'ISC license' -%}ISC{% elif cookiecutter.open_source_license == 'Apache Software License 2.0' -%}Apache-2.0{% elif cookiecutter.open_source_license == 'GNU General Public License v3' -%}GPL-3.0-only{% endif %}",
+  "license": "{{ cookiecutter.__license_options_npm[cookiecutter.open_source_license] }}",
   "devDependencies": {
     "@svgr/webpack": "^6.2.1",
     "@types/react": "^16.8.19",
