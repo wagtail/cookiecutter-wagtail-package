@@ -20,5 +20,29 @@
         "GNU General Public License v3",
         "Not open source"
     ],
+    "__license_options_pypi": {
+        "BSD 3-Clause license": "License :: OSI Approved :: BSD License",
+        "MIT license": "License :: OSI Approved :: MIT License",
+        "ISC license": "License :: OSI Approved :: ISC License (ISCL)",
+        "Apache Software License 2.0": "License :: OSI Approved :: Apache Software License",
+        "GNU General Public License v3": "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "Not open source": "License :: Other/Proprietary License"
+    },
+    "__license_options_npm": {
+        "BSD 3-Clause license": "BSD-3-Clause",
+        "MIT license": "MIT",
+        "ISC license": "ISC",
+        "Apache Software License 2.0": "Apache-2.0",
+        "GNU General Public License v3": "GPL-3.0-only",
+        "Not open source": "UNLICENSED"
+    },
+    "__license_options_readme_badges": {
+        "BSD 3-Clause license": "[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)",
+        "MIT license": "[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)",
+        "ISC license": "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)",
+        "Apache Software License 2.0": "[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)",
+        "GNU General Public License v3": "[![License: GPL-3.0-only](https://img.shields.io/badge/License-GPL--3.0--only-blue.svg)](https://opensource.org/licenses/GPL-3.0)",
+        "Not open source": ""
+    },
     "use_frontend": "y"
 }
