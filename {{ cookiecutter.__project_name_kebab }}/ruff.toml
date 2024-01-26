@@ -1,0 +1,30 @@
+extend-exclude = [
+    "migrations",
+    "LC_MESSAGES",
+    "locale",
+]
+line-length = 88
+target-version = "py38"  # minimum target version
+
+
+[lint]
+# E: pycodestyle errors
+# F: Pyflakes
+# W: Warning
+# I: isort
+# B: flake8-bugbear
+# C4: flake8-comprehensions
+select = ["E", "F", "W", "I",  "B", "C4"]
+
+# E501: Line too long
+ignore = ["E501"]
+
+
+[lint.isort]
+known-first-party = ["{{ cookiecutter.__project_name_snake }}"]
+lines-after-imports = 2
+lines-between-types = 1
+
+
+[format]
+docstring-code-format = true
