@@ -1,5 +1,4 @@
 extend-exclude = [
-    "migrations",
     "LC_MESSAGES",
     "locale",
 ]
