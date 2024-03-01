@@ -3,7 +3,6 @@ extend-exclude = [
     "locale",
 ]
 line-length = 88
-target-version = "py38"  # minimum target version
 
 
 [lint]
