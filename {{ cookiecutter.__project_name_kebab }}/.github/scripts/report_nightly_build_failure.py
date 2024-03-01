@@ -3,6 +3,7 @@ Called by GH Actions when the nightly build fails.
 
 This reports an error to the #nightly-build-failures Slack channel.
 """
+
 import os
 
 import requests
@@ -16,6 +17,7 @@ if "SLACK_WEBHOOK_URL" in os.environ:
             "text": "A Nightly build failed. See https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/actions/runs/"
             + os.environ["GITHUB_RUN_ID"],
         },
+        timeout=30,
     )
 
     print("Slack responded with:", response)
