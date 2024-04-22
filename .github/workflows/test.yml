@@ -6,15 +6,15 @@ jobs:
   render:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - run: python -m pip install cookiecutter
       - run: python -m cookiecutter . --no-input
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: rendered-project
           path: wagtail-llama-save
@@ -23,12 +23,12 @@ jobs:
     needs: render
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         # Restore the rendered artifact to a directory outside the repo checkout.
         # Even if we invoke pre-commit from in a subdirectory
         # it tries to lint the whole repo including the raw templates.
@@ -56,12 +56,12 @@ jobs:
     needs: render
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: rendered-project
           path: wagtail-llama-save
@@ -74,12 +74,12 @@ jobs:
     needs: render
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 16
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: rendered-project
           path: wagtail-llama-save
