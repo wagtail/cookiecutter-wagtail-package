@@ -32,3 +32,13 @@ lines-between-types = 1
 
 [format]
 docstring-code-format = true
+
+
+[per-file-ignores]
+"tests/**/*.py" = [
+    "S101",    # asserts allowed in tests
+    "ARG",     # unused function args (pytest fixtures)
+    "FBT",     # booleans as positional arguments (@pytest.mark.parametrize)
+    "PLR2004", # magic value used in comparison
+    "S311",    # standard pseudo-random generators are not suitable for cryptographic purposes
+]
