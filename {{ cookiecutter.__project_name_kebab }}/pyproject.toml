@@ -25,6 +25,7 @@ classifiers = [
     "Framework :: Django :: 5.0",
     "Framework :: Wagtail",
     "Framework :: Wagtail :: 5",
+    "Framework :: Wagtail :: 6",
 ]
 requires-python = ">=3.8"
 dynamic = ["version"]
