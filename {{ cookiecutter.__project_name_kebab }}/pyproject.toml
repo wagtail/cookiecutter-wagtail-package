@@ -65,4 +65,4 @@ exclude = [
 ]
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "{{ cookiecutter.__project_name_kebab }}.test.settings"
+DJANGO_SETTINGS_MODULE = "{{ cookiecutter.__project_name_snake }}.test.settings"

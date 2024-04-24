@@ -30,11 +30,7 @@ lines-after-imports = 2
 lines-between-types = 1
 
 
-[format]
-docstring-code-format = true
-
-
-[per-file-ignores]
+[lint.per-file-ignores]
 "tests/**/*.py" = [
     "S101",    # asserts allowed in tests
     "ARG",     # unused function args (pytest fixtures)
@@ -42,3 +38,7 @@ docstring-code-format = true
     "PLR2004", # magic value used in comparison
     "S311",    # standard pseudo-random generators are not suitable for cryptographic purposes
 ]
+
+
+[format]
+docstring-code-format = true
