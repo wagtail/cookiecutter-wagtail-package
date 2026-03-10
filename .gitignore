@@ -6,7 +6,7 @@ __pycache__/
 *.py[co]
 /build
 /dist
-/{{ cookiecutter.__project_name_snake }}.egg-info
+*.egg-info
 /.coverage
 /htmlcov
 /.tox
@@ -14,7 +14,7 @@ __pycache__/
 /venv
 /.vscode
 /site
-/test_{{ cookiecutter.__project_name_snake }}.db
+*.db
 /node_modules
 /test-static
 /test-media

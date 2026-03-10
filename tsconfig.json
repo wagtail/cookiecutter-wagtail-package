@@ -8,8 +8,5 @@
     "strictNullChecks": true,
     "esModuleInterop": true
   },
-  "files": [
-    "{{ cookiecutter.__project_name_snake }}/static_src/main.tsx",
-    "{{ cookiecutter.__project_name_snake }}/static_src/custom.d.ts"
-  ]
+  "include": ["src/*"]
 }

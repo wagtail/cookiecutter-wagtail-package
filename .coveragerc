@@ -1,6 +1,6 @@
 [run]
 branch = True
-include = {{ cookiecutter.__project_name_snake }}/*
+include = src/*
 omit = */migrations/*,*/tests/*
 
 [report]

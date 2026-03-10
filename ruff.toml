@@ -1,7 +1,4 @@
-extend-exclude = [
-    "LC_MESSAGES",
-    "locale",
-]
+extend-exclude = ["LC_MESSAGES", "locale"]
 line-length = 88
 
 
@@ -25,7 +22,7 @@ ignore = ["E501"]
 
 
 [lint.isort]
-known-first-party = ["{{ cookiecutter.__project_name_snake }}"]
+known-first-party = ["src"]
 lines-after-imports = 2
 lines-between-types = 1
 
