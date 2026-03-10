@@ -1,3 +1,20 @@
 venv
 .venv
 .vscode
+
+__pycache__/
+*.py[co]
+/build
+/dist
+/{{ cookiecutter.__project_name_snake }}.egg-info
+/.coverage
+/htmlcov
+/.tox
+/.venv
+/venv
+/.vscode
+/site
+/test_{{ cookiecutter.__project_name_snake }}.db
+/node_modules
+/test-static
+/test-media
