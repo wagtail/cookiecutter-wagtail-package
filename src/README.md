@@ -2,10 +2,6 @@
 
 {{ cookiecutter.project_short_description }}
 
-{{ cookiecutter.__license_options_readme_badges[cookiecutter.open_source_license] }}
-[![PyPI version](https://badge.fury.io/py/{{ cookiecutter.__project_name_kebab }}.svg)](https://badge.fury.io/py/{{ cookiecutter.__project_name_kebab }})
-[![{{ cookiecutter.project_name }} CI](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/actions/workflows/test.yml/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/actions/workflows/test.yml)
-
 ## Links
 
 - [Documentation](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/blob/main/README.md)
