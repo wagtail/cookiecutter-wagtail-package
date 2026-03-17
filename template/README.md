@@ -18,7 +18,7 @@
 
 ## Installation
 
-- `python -m pip install {{ cookiecutter.__project_name_kebab }}`
+- `python -m pip install my-project-name`
 - ...
 
 ## Contributing
@@ -29,7 +29,7 @@ To make changes to this project, first clone this repository:
 
 ```sh
 git clone {{ cookiecutter.repository_url }}.git
-cd {{ cookiecutter.__project_name_kebab }}
+cd my-project-name
 ```
 
 With your preferred virtualenv activated, install testing dependencies:
@@ -55,7 +55,7 @@ It is included in the project testing requirements. To set up locally:
 
 ```shell
 # go to the project directory
-$ cd {{ cookiecutter.__project_name_kebab }}
+$ cd my-project-name
 # initialize pre-commit
 $ pre-commit install
 
@@ -72,6 +72,6 @@ tox
 ```
 
 or, you can run them for a specific environment `tox -e python3.11-django4.2-wagtail5.1` or specific test
-`tox -e python3.11-django4.2-wagtail5.1-sqlite {{ cookiecutter.__project_name_kebab }}.tests.test_file.TestClass.test_method`
+`tox -e python3.11-django4.2-wagtail5.1-sqlite my-project-name.tests.test_file.TestClass.test_method`
 
 To run the test app interactively, use `tox -e interactive`, visit `http://127.0.0.1:8020/admin/` and log in with `admin`/`changeme`.
