@@ -1,4 +1,4 @@
-name: {% raw %}CI
+name: CI
 
 on:
   push:
@@ -79,5 +79,5 @@ jobs:
       - name: Test
         run: tox
         env:
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432/{% endraw %}my_project_name
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/my_project_name
           DB: postgres

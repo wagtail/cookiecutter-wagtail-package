@@ -5,5 +5,6 @@
   "__project_name_kebab": "{{ cookiecutter.__project_name_snake.replace('_', '-') }}",
   "__project_name_camel": "{{ cookiecutter.__project_name_snake.replace('_', ' ').title().replace(' ', '') }}",
   "project_short_description": "A one line description of your package.",
-  "repository_url": "https://github.com/org_name_or_username/package_name_kebab"
+  "repository_url": "https://github.com/org_name_or_username/package_name_kebab",
+  "_copy_without_render": [".github/workflows"]
 }
