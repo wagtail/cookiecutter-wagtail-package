@@ -1,4 +1,4 @@
-name: {{ cookiecutter.project_name }}{% raw %} CI
+name: {% raw %} CI
 
 on:
   push:
