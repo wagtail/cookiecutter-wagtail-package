@@ -1,14 +1,11 @@
 {
-  "name": "{{ cookiecutter.__project_name_kebab }}",
+  "name": "package-tooling",
+  "private": true,
   "version": "0.1.0",
-  "description": "{{ cookiecutter.project_short_description }}",
-  "main": "{{ cookiecutter.__project_name_snake }}/static_src/main.tsx",
   "scripts": {
     "start": "webpack --config ./webpack.config.js --mode development --progress --watch",
     "build": "webpack --config ./webpack.config.js --mode production"
   },
-  "author": "{{ cookiecutter.full_name }}",
-  "license": "{{ cookiecutter.__license_options_npm[cookiecutter.open_source_license] }}",
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/react": "^16.14.21",
