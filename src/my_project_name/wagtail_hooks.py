@@ -8,9 +8,7 @@ def register_admin_urls():
     urls = [
         path(
             "jsi18n/",
-            JavaScriptCatalog.as_view(
-                packages=["{{ cookiecutter.__project_name_snake }}"]
-            ),
+            JavaScriptCatalog.as_view(packages=["my_project_name"]),
             name="javascript_catalog",
         ),
         # Add other package-scoped URLs here so they are access-restricted to the admin.
@@ -18,10 +16,10 @@ def register_admin_urls():
 
     return [
         path(
-            "{{ cookiecutter.__project_name_snake }}/",
+            "my_project_name/",
             include(
-                (urls, "{{ cookiecutter.__project_name_snake }}"),
-                namespace="{{ cookiecutter.__project_name_snake }}",
+                (urls, "my_project_name"),
+                namespace="my_project_name",
             ),
         )
     ]

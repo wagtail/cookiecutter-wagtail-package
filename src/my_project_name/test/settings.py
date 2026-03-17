@@ -32,8 +32,8 @@ ALLOWED_HOSTS = ["localhost", "testserver"]
 # Application definition
 
 INSTALLED_APPS = [
-    "{{ cookiecutter.__project_name_snake }}",
-    "{{ cookiecutter.__project_name_snake }}.test",
+    "my_project_name",
+    "my_project_name.test",
     "wagtail.contrib.search_promotions",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -71,7 +71,7 @@ MIDDLEWARE = [
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
-ROOT_URLCONF = "{{ cookiecutter.__project_name_snake }}.test.urls"
+ROOT_URLCONF = "my_project_name.test.urls"
 
 TEMPLATES = [
     {
@@ -109,7 +109,7 @@ PASSWORD_HASHERS = ("django.contrib.auth.hashers.MD5PasswordHasher",)
 # https://docs.djangoproject.com/en/stable/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.config(default="sqlite:///test_{{ cookiecutter.__project_name_snake }}.db"),
+    "default": dj_database_url.config(default="sqlite:///test_my_project_name.db"),
 }
 
 
@@ -158,4 +158,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "test-media")
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "Wagtail {{ cookiecutter.project_name }} test site"
+WAGTAIL_SITE_NAME = "My project name test site"

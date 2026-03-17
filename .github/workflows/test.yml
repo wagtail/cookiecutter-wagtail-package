@@ -79,5 +79,5 @@ jobs:
       - name: Test
         run: tox
         env:
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432/{% endraw %}{{ cookiecutter.__project_name_snake }}
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/{% endraw %}my_project_name
           DB: postgres

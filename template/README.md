@@ -1,4 +1,4 @@
-# Wagtail {{ cookiecutter.project_name }}
+# My project name
 
 {{ cookiecutter.project_short_description }}
 
