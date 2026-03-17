@@ -14,8 +14,10 @@ if "SLACK_WEBHOOK_URL" in os.environ:
     response = requests.post(
         os.environ["SLACK_WEBHOOK_URL"],
         json={
-            "text": "A Nightly build failed. See {{ cookiecutter.repository_url }}/actions/runs/"
-            + os.environ["GITHUB_RUN_ID"],
+            "text": (
+                f"A Nightly build failed. See https://github.com/"
+                f"{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}"
+            ),
         },
         timeout=30,
     )

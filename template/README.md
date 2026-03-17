@@ -1,14 +1,14 @@
 # My project name
 
-{{ cookiecutter.project_short_description }}
+Placeholder: Project short description.
 
 ## Links
 
-- [Documentation]({{ cookiecutter.repository_url }}/blob/main/README.md)
-- [Changelog]({{ cookiecutter.repository_url }}/blob/main/CHANGELOG.md)
-- [Contributing]({{ cookiecutter.repository_url }}/blob/main/CONTRIBUTING.md)
-- [Discussions]({{ cookiecutter.repository_url }}/discussions)
-- [Security]({{ cookiecutter.repository_url }}/security)
+- [Documentation](https://github.com/org_name_or_username/package_name_kebab/blob/main/README.md)
+- [Changelog](https://github.com/org_name_or_username/package_name_kebab/blob/main/CHANGELOG.md)
+- [Contributing](https://github.com/org_name_or_username/package_name_kebab/blob/main/CONTRIBUTING.md)
+- [Discussions](https://github.com/org_name_or_username/package_name_kebab/discussions)
+- [Security](https://github.com/org_name_or_username/package_name_kebab/security)
 
 ## Supported versions
 
@@ -25,12 +25,7 @@
 
 ### Install
 
-To make changes to this project, first clone this repository:
-
-```sh
-git clone {{ cookiecutter.repository_url }}.git
-cd my-project-name
-```
+To make changes to this project, first clone this repository.
 
 With your preferred virtualenv activated, install testing dependencies:
 

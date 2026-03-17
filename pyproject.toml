@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "my-project-name"
-description = "{{ cookiecutter.project_short_description }}"
+description = "Placeholder: Project short description"
 readme = "README.md"
 license = "BSD-3-Clause"
 classifiers = [
@@ -40,7 +40,7 @@ testing = [
 ci = ["tox==4.11.3", "tox-gh-actions==3.1.3"]
 
 [project.urls]
-Home = "{{ cookiecutter.repository_url }}"
+Home = "https://github.com/org_name_or_username/package_name_kebab"
 
 [tool.flit.module]
 name = "my_project_name"
