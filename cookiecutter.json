@@ -10,6 +10,5 @@
   "project_short_description": "A one line description of your package.",
   "full_name": "Fred Bloggs",
   "email": "fred@example.com",
-  "github_username": "wagtail",
-  "use_frontend": "y"
+  "github_username": "wagtail"
 }

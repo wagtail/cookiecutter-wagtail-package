@@ -16,14 +16,6 @@ This creates Github Workflows for:
   - Create a pending publisher in PyPI: https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/
   - Create an environment called "publish" in GitHub: https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#creating-an-environment
 
-### Frontend tooling
-
-This includes a simple webpack setup with TypeScript, React, styled-components, and SVG support.
-
-Note that React is pinned to 16.x because on production it uses the same React library as Wagtail to reduce bundle size.
-
-This can be excluded by answering "no" to the `use_frontend` question.
-
 ## How to use
 
 Firstly install cookiecutter:
