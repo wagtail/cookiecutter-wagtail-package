@@ -8,16 +8,17 @@ def register_admin_urls():
     urls = [
         path(
             "jsi18n/",
-            JavaScriptCatalog.as_view(packages=["{{ cookiecutter.__project_name_snake }}"]),
+            JavaScriptCatalog.as_view(
+                packages=["{{ cookiecutter.__project_name_snake }}"]
+            ),
             name="javascript_catalog",
         ),
-        # Add your other URLs here, and they will appear under `/admin/{{ cookiecutter.__project_name_snake_without_prefix }}/`
-        # Note: you do not need to check for authentication in views added here, Wagtail does this for you!
+        # Add other package-scoped URLs here so they are access-restricted to the admin.
     ]
 
     return [
         path(
-            "{{ cookiecutter.__project_name_snake_without_prefix }}/",
+            "{{ cookiecutter.__project_name_snake }}/",
             include(
                 (urls, "{{ cookiecutter.__project_name_snake }}"),
                 namespace="{{ cookiecutter.__project_name_snake }}",

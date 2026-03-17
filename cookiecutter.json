@@ -2,13 +2,9 @@
   " ": "]\nCookiecutter Wagtail Package\nUse a project name without `Wagtail` as the prefix, this will be added for you.\n[Please press enter to continue",
   "project_name": "Llama Save",
   "__project_name_snake_without_prefix": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-  "__project_name_kebab_without_prefix": "{{ cookiecutter.__project_name_snake_without_prefix.replace('_', '-') }}",
-  "__project_name_camel_without_prefix": "{{ cookiecutter.__project_name_snake_without_prefix.replace('_', ' ').title().replace(' ', '') }}",
   "__project_name_snake": "wagtail_{{ cookiecutter.__project_name_snake_without_prefix }}",
-  "__project_name_kebab": "wagtail-{{ cookiecutter.__project_name_kebab_without_prefix }}",
-  "__project_name_camel": "Wagtail{{ cookiecutter.__project_name_camel_without_prefix }}",
+  "__project_name_kebab": "wagtail-{{ cookiecutter.__project_name_snake_without_prefix.replace('_', '-') }}",
+  "__project_name_camel": "Wagtail{{ cookiecutter.__project_name_snake_without_prefix.replace('_', ' ').title().replace(' ', '') }}",
   "project_short_description": "A one line description of your package.",
-  "full_name": "Fred Bloggs",
-  "email": "fred@example.com",
-  "github_username": "wagtail"
+  "repository_url": "https://github.com/org_name_or_username/package_name_kebab"
 }

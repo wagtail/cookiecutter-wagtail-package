@@ -4,9 +4,6 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "{{ cookiecutter.__project_name_kebab }}"
-authors = [
-    { name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" },
-]
 description = "{{ cookiecutter.project_short_description }}"
 readme = "README.md"
 license = "BSD-3-Clause"
@@ -43,7 +40,7 @@ testing = [
 ci = ["tox==4.11.3", "tox-gh-actions==3.1.3"]
 
 [project.urls]
-Home = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}"
+Home = "{{ cookiecutter.repository_url }}"
 
 [tool.flit.module]
 name = "{{ cookiecutter.__project_name_snake }}"

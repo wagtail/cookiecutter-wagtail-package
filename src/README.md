@@ -4,11 +4,11 @@
 
 ## Links
 
-- [Documentation](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/blob/main/README.md)
-- [Changelog](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/blob/main/CHANGELOG.md)
-- [Contributing](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/blob/main/CONTRIBUTING.md)
-- [Discussions](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/discussions)
-- [Security](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}/security)
+- [Documentation]({{ cookiecutter.repository_url }}/blob/main/README.md)
+- [Changelog]({{ cookiecutter.repository_url }}/blob/main/CHANGELOG.md)
+- [Contributing]({{ cookiecutter.repository_url }}/blob/main/CONTRIBUTING.md)
+- [Discussions]({{ cookiecutter.repository_url }}/discussions)
+- [Security]({{ cookiecutter.repository_url }}/security)
 
 ## Supported versions
 
@@ -28,7 +28,7 @@
 To make changes to this project, first clone this repository:
 
 ```sh
-git clone https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.__project_name_kebab }}.git
+git clone {{ cookiecutter.repository_url }}.git
 cd {{ cookiecutter.__project_name_kebab }}
 ```
 
