@@ -1,10 +1,9 @@
 {
-  " ": "]\nCookiecutter Django/Wagtail Package\nPrefix your project name with `Django` or `Wagtail` as the prefix depending on your goals.\n[Please press enter to continue",
-  "project_name": "Wagtail Llama Save",
+  "project_name": "Wagtail cool project",
   "__project_name_snake": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "__project_name_kebab": "{{ cookiecutter.__project_name_snake.replace('_', '-') }}",
   "__project_name_camel": "{{ cookiecutter.__project_name_snake.replace('_', ' ').title().replace(' ', '') }}",
-  "project_short_description": "A one line description of your package.",
-  "repository_url": "https://github.com/org_name_or_username/package_name_kebab",
+  "project_short_description": "A cool description with important information",
+  "repository_url": "https://github.com/org-name-or-username/my-project-name",
   "_copy_without_render": [".github/workflows"]
 }

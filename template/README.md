@@ -4,11 +4,11 @@ Placeholder: Project short description.
 
 ## Links
 
-- [Documentation](https://github.com/org_name_or_username/package_name_kebab/blob/main/README.md)
-- [Changelog](https://github.com/org_name_or_username/package_name_kebab/blob/main/CHANGELOG.md)
-- [Contributing](https://github.com/org_name_or_username/package_name_kebab/blob/main/CONTRIBUTING.md)
-- [Discussions](https://github.com/org_name_or_username/package_name_kebab/discussions)
-- [Security](https://github.com/org_name_or_username/package_name_kebab/security)
+- [Documentation](https://github.com/https://github.com/org-name-or-username/my-project-name/blob/main/README.md)
+- [Changelog](https://github.com/https://github.com/org-name-or-username/my-project-name/blob/main/CHANGELOG.md)
+- [Contributing](https://github.com/https://github.com/org-name-or-username/my-project-name/blob/main/CONTRIBUTING.md)
+- [Discussions](https://github.com/https://github.com/org-name-or-username/my-project-name/discussions)
+- [Security](https://github.com/https://github.com/org-name-or-username/my-project-name/security)
 
 ## Supported versions
 
