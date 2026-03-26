@@ -26,6 +26,11 @@ jobs:
         with:
           python-version: '3.8'
       - uses: pre-commit/action@v3.0.1
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+      - run: npm ci
+      - run: npm run lint
 
   test-sqlite:
     runs-on: ubuntu-latest

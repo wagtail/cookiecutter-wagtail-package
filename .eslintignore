@@ -1,6 +1,0 @@
-node_modules
-*.min.js
-**/lib/
-public/
-coverage/
-**/vendor/

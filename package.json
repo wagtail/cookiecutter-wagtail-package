@@ -2,7 +2,13 @@
   "name": "package-tooling",
   "private": true,
   "version": "0.1.0",
-  "scripts": {},
-  "devDependencies": {},
-  "dependencies": {}
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  },
+  "scripts": {
+    "lint": "npm run lint:format",
+    "lint:format": "prettier --check \"**/?(.)*.{css,scss,js,ts,tsx,json,yaml,yml}\"",
+    "format": "prettier --write \"**/?(.)*.{css,scss,js,ts,tsx,json,yaml,yml}\""
+  }
 }
