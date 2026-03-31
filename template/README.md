@@ -36,11 +36,11 @@ python -m pip install --upgrade pip>=21.3
 python -m pip install -e '.[testing]' -U
 ```
 
-#### Using flit
+#### Using uv
 
 ```sh
-python -m pip install flit
-flit install
+# https://docs.astral.sh/uv/getting-started/installation/
+uv pip install -e '.[testing]' -U
 ```
 
 ### pre-commit
