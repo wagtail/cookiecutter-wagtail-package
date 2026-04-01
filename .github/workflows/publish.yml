@@ -4,39 +4,36 @@ name: Publish to PyPI
 
 on:
   release:
+    # https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#release
     types: [published]
 
 jobs:
+  test:
+    uses: ./.github/workflows/test.yml
   build:
+    needs: test
     runs-on: ubuntu-latest
     permissions:
-      contents: read # to fetch code (actions/checkout)
+      contents: read
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
+      - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
         with:
           python-version: '3.11'
       - run: uv build
-
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           path: ./dist
-
   publish:
     needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: none
       id-token: write # required for trusted publishing
-    environment: publish
+    environment: pypi
     steps:
-      - uses: actions/download-artifact@v4
-
-      - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+      - uses: actions/download-artifact@v7
+      - uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: artifact/
           print-hash: true

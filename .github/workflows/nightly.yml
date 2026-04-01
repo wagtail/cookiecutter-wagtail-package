@@ -17,18 +17,10 @@ jobs:
       - uses: astral-sh/setup-uv@v7
         with:
           python-version: '3.11'
-
-      - run: git clone https://github.com/wagtail/wagtail.git
-
-      - run: uv pip install -e ".[testing]"
-      - run: uv pip install ./wagtail
-
+      - run: uv sync --dev
+      - run: uv add git+https://github.com/wagtail/wagtail --branch main
       - run: uv run pytest -vv
-
-      - name: Report failure
-        run: |
-          python -m pip install requests
-          python ./.github/scripts/report_nightly_build_failure.py
+      - run: ./.github/scripts/report_nightly_build_failure.py
         if: ${{ failure() && env.WEBHOOK_EXISTS == 'true' }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

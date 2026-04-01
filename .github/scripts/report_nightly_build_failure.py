@@ -1,3 +1,9 @@
+#!/usr/bin/env -S uv run
+# /// script
+# dependencies = [
+#     "requests<3",
+# ]
+# ///
 """
 Called by GH Actions when the nightly build fails.
 

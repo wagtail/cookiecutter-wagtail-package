@@ -11,4 +11,4 @@ jobs:
       - run: uvx cookiecutter . --no-input
       - run: tree wagtail-cool-project
       # Ensure package can be installed
-      - run: uvx pip install -e .
+      - run: uv sync --dev
