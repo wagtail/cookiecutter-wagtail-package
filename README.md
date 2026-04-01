@@ -1,6 +1,13 @@
 # cookiecutter-wagtail-package
 
-A cookiecutter template for building Wagtail add-on packages.
+A [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) template for building Wagtail and Django packages according to the the Wagtail [package maintenance guidelines](https://docs.wagtail.org/en/stable/deployment/index.html).
+
+## Usage
+
+```bash
+# Shortest one-liner, you will be prompted for important package information.
+uvx cookiecutter gh:wagtail/cookiecutter-wagtail-package
+```
 
 ## What's included
 
