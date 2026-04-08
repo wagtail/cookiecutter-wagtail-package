@@ -6,12 +6,15 @@ default_language_version:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v6.0.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-illegal-windows-names
       - id: check-json
       - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
       - id: check-symlinks
       - id: check-toml
       - id: check-yaml
@@ -20,8 +23,16 @@ repos:
       - id: trailing-whitespace
   - repo: https://github.com/astral-sh/ruff-pre-commit
     # ruff config is in ruff.toml
-    rev: v0.3.0
+    rev: v0.15.9
     hooks:
-      - id: ruff
+      - id: ruff-check
         args: [--fix]
       - id: ruff-format
+  - repo: local
+    hooks:
+      - id: lint:format
+        language: node
+        language_version: system
+        name: npm run lint:format
+        entry: npm run lint:format
+        types: [css, scss, javascript, ts, tsx, json, yaml]
