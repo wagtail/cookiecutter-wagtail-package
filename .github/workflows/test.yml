@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
       - uses: astral-sh/setup-uv@v7
         with:
-          python-version: '3.12'
+          python-version-file: .python-version
       - uses: pre-commit/action@v3.0.1
       - uses: actions/setup-node@v6
         with:
@@ -31,30 +31,65 @@ jobs:
       - run: npm ci
       - run: npm run lint
 
-  test-sqlite:
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version-file: .python-version
+      - run: uv sync --dev
+      - run: just coverage
+      - run: uv run ./demo/manage.py check
+      - run: uv run ./demo/manage.py makemigrations --check --noinput
+      - run: uv run ./demo/manage.py test home
+
+  test-lowest-deps:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+      - run: just test-lowest-deps
+
+  test-highest-deps:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+      - run: just test-highest-deps
+
+  test-compatibility:
     runs-on: ubuntu-latest
     needs: lint
     strategy:
       matrix:
-        python: ['3.8', '3.9', '3.10', '3.11', '3.12']
-
+        # Supported versions of Python, excluding oldest and newest.
+        # See https://devguide.python.org/versions/#supported-versions.
+        include:
+          # Skipped: oldest supported versions, tested in test-lowest-deps.
+          - python: '3.11'
+            wagtail: 'Wagtail>=7.0,<7.1'
+          - python: '3.12'
+            wagtail: 'Wagtail>=7.1,<7.2'
+            django: 'Django>=5.2,<5.3'
+          - python: '3.13'
+            wagtail: 'Wagtail>=7.2,<7.3'
+            django: 'Django>=6.0,<6.1'
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
         with:
           python-version: ${{ matrix.python }}
-      - run: uv sync --dev
-      - run: uv run tox
+      - run: uv run --with '${{ matrix.django }},${{ matrix.wagtail }}' pytest
         env:
           DB: sqlite
 
   test-postgres:
     runs-on: ubuntu-latest
     needs: lint
-    strategy:
-      matrix:
-        python: ['3.8', '3.9', '3.10', '3.11', '3.12']
-
     services:
       postgres:
         image: ${{ matrix.postgres || 'postgres:12' }}
