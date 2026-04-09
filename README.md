@@ -1,6 +1,6 @@
 # cookiecutter-wagtail-package
 
-A [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) template for building Wagtail and Django packages according to the the Wagtail [package maintenance guidelines](https://docs.wagtail.org/en/stable/deployment/index.html).
+A [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) template for building Wagtail and Django packages according to the the Wagtail [package maintenance guidelines](https://wagtail.org/package-guidelines/).
 
 ## Usage
 
