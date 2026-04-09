@@ -19,8 +19,11 @@ jobs:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
         with:
-          python-version: '3.11'
+          python-version-file: .python-version
       - run: uv build
+      # Smoke tests with ready-to-publish package.
+      - run: uv run --isolated --no-project --with dist/*.whl pytest
+      - run: uv run --isolated --no-project --with dist/*.tar.gz pytest
       - uses: actions/upload-artifact@v7
         with:
           path: ./dist
