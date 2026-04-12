@@ -39,6 +39,9 @@ jobs:
       - uses: astral-sh/setup-uv@v7
         with:
           python-version-file: .python-version
+      - uses: extractions/setup-just@v4
+        with:
+          just-version: '1.39.0'
       - run: uv sync --dev
       - run: just coverage
       - run: uv run ./demo/manage.py check
@@ -51,6 +54,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
+      - uses: extractions/setup-just@v4
+        with:
+          just-version: '1.39.0'
       - run: just test-lowest-deps
 
   test-highest-deps:
@@ -59,6 +65,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
+      - uses: extractions/setup-just@v4
+        with:
+          just-version: '1.39.0'
       - run: just test-highest-deps
 
   test-compatibility:
