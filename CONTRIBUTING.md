@@ -1,16 +1,22 @@
 # Contributing guidelines
 
-Thank you for your interest in this project! We welcome all contributions, from bug reports to new features that align with [our roadmap](ROADMAP.md). Here are instructions for anyone wishing to contribute.
+Thank you for your interest in this project! We welcome all contributions, from bug reports to new features that align with [our roadmap](ROADMAP.md).
+
+## How the template works
+
+For ease of maintenance and usage, this repository is both a cookiecutter template _and_ a working Django/Wagtail package. The project root is the template itself -- when a new package is generated, those files are copied as-is. Only a handful of files in the `template/` directory differ between this repo and the generated project: `README.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `LICENSE`, and `ROADMAP.md`. With the [hooks/pre_prompt.py script](./hooks/pre_prompt.py), we will also adjust specific placeholders.
+
+In practice, this means that most contributions are made directly to the root files and will be reflected in newly-generated packages. The `template/` files should be written as if they are part of the generated project, not this repo.
 
 ## Installation
 
-The repo includes a simple demo application that can be run to develop the package itself. Follow the instructions below for a local setup.
+The repo includes a simple demo application that can be run to develop the package itself. Give it a try by following the instructions below for a local setup.
 
 First, clone the repo:
 
 ```sh
-git clone git+https://github.com/org-name-or-username/my-project-name
-cd my-project-name
+git clone git+https://github.com/wagtail/cookiecutter-wagtail-package
+cd cookiecutter-wagtail-package
 ```
 
 We use [just](https://github.com/casey/just) as a task runner, [prek](https://github.com/j178/prek) for pre-commit hooks, and [uv](https://docs.astral.sh/uv/) to manage Python dependencies. Make sure you have all three installed.
@@ -24,7 +30,7 @@ just demo
 
 ## Quality assurance
 
-Here are the available scripts for the project:
+Here are the available tooling scripts for the project:
 
 ```sh
 just clean-pyc         # Remove all the Python and Node.js cache files.
@@ -49,21 +55,9 @@ just test              # Run tests with pytest.
 
 There is a simple test app in `tests/`. Write your test modules there alongside the existing files.
 
-## Continuous integration
-
-The project uses GitHub Actions for CI. On every push and pull request, the CI will:
-
-- Run linters (Ruff, pre-commit, Prettier).
-- Run tests with coverage.
-- Run tests against the lowest supported dependency versions.
-- Run tests against the latest dependency versions.
-- Run tests against a compatibility matrix of Python, Django, and Wagtail versions.
-
-There is also a nightly job that tests against the latest development version of Wagtail, so we catch compatibility issues early.
-
 ## Code review
 
-Create a pull request with your changes so that it can be code reviewed by a maintainer. Ensure that you give a summary with the purpose of the change and any steps that the reviewer needs to take to test your work. Please make sure to provide unit tests for your work.
+Create a pull request with your changes so that it can be reviewed by a maintainer. Ensure that you give a summary with the purpose of the change and any steps that the reviewer needs to take to test your work. Please make sure to provide unit tests for your work.
 
 ## Releases
 
