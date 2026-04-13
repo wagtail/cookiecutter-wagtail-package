@@ -36,3 +36,9 @@ repos:
         name: npm run lint:format
         entry: npm run lint:format
         types: [css, scss, javascript, ts, tsx, json, yaml]
+      - id: lint:css
+        language: node
+        language_version: system
+        name: npm run lint:css
+        entry: npm run lint:css
+        types: [css, scss]

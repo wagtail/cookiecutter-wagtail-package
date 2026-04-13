@@ -1,0 +1,11 @@
+node_modules
+*.min.css
+**/lib/
+public/
+coverage/
+**/vendor/
+_build
+.mypy_cache
+/coverage_html_report
+/htmlcov
+/demo
