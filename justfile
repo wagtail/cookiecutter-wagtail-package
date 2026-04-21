@@ -2,8 +2,6 @@
 # Requires: `uv`, `npm`, and `just`.
 # Editable package path under `src/` (passed to `coverage run --source`).
 
-src_package := "src/my_project_name"
-
 # List all the justfile recipes.
 help:
     just --list --list-prefix 'just '
@@ -60,16 +58,9 @@ test-highest-deps:
 
 # Run tests with coverage.
 coverage:
-    uv run pytest --cov {{ src_package }}
+    uv run pytest --cov src/my_project_name
     uv run coverage report -m
     uv run coverage html
-    @if command -v open >/dev/null 2>&1; then \
-    	open htmlcov/index.html; \
-    elif command -v xdg-open >/dev/null 2>&1; then \
-    	xdg-open htmlcov/index.html; \
-    else \
-    	echo 'Open htmlcov/index.html in your browser.'; \
-    fi
 
 # Make migrations and migrate the database.
 migrate:
