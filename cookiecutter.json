@@ -5,5 +5,5 @@
   "__project_name_camel": "{{ cookiecutter.__project_name_snake.replace('_', ' ').title().replace(' ', '') }}",
   "project_short_description": "A cool description with important information",
   "repository_url": "https://github.com/org-name-or-username/my-project-name",
-  "_copy_without_render": [".github/workflows", "demo/demo/templates"]
+  "_copy_without_render": [".github/workflows", "demo/*/templates"]
 }
