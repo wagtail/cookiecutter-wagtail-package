@@ -1,6 +1,6 @@
 # How the template works
 
-This project uses [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) to generate new Wagtail/Django packages. Unlike typical cookiecutter templates that use a directory full of `{{ cookiecutter.variable }}` placeholders, this repository is itself a working Django/Wagtail package. The template generation happens through a custom overlay mechanism.
+This project uses [cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) to generate new Wagtail/Django packages. Unlike typical cookiecutter templates that use a directory full of cookiecutter interpolation placeholders, this repository is itself a working Django/Wagtail package. The template generation happens through a custom overlay mechanism.
 
 ## Template structure
 
