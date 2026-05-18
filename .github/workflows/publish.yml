@@ -35,7 +35,7 @@ jobs:
       id-token: write # required for trusted publishing
     environment: pypi
     steps:
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
       - uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: artifact/
