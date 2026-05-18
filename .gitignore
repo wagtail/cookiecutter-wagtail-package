@@ -1,6 +1,7 @@
 venv
 .venv
 .vscode
+.claude
 
 .DS_Store
 __pycache__/
