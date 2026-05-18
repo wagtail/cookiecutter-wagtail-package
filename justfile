@@ -21,7 +21,7 @@ install: clean-pyc
 lint-server:
     uv run ruff format --check .
     uv run ruff check .
-    SKIP=ruff,ruff-format uv run prek run --all-files
+    SKIP=ruff-check,ruff-format,lint:css,lint:format uv run prek run --all-files
 
 # Lint the client code with Prettier.
 lint-client:
@@ -34,7 +34,7 @@ lint: lint-server lint-client
 format-server:
     uv run ruff check . --fix
     uv run ruff format .
-    SKIP=ruff,ruff-format uv run prek run --all-files
+    SKIP=ruff-check,ruff-format,lint:css,lint:format uv run prek run --all-files
 
 # Format the client code with Prettier.
 format-client:
