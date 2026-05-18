@@ -58,7 +58,7 @@ For example, if your project is called "Wagtail Llamas", set your project name t
 
 ### Agent skills
 
-This project includes reusable [agent skills](https://agentskills.io/) for AI coding agents. Install the project skills with [Vercel Lab’s Agent Skills CLI](https://github.com/vercel-labs/agent-skills):
+This project includes reusable [agent skills](https://agentskills.io/) for AI coding agents. Install the project skills with the [Vercel Labs Skills CLI](https://github.com/vercel-labs/skills):
 
 ```sh
 npx skills add wagtail/cookiecutter-wagtail-package
@@ -91,3 +91,10 @@ npx skills add wagtail/cookiecutter-wagtail-package
 
 - "Compare this package with the latest cookiecutter-wagtail-package template and report any differences"
 - "Update this package's tooling and CI to match the latest cookiecutter-wagtail-package template"
+
+#### Upgrade project dependencies
+
+[upgrade-project-dependencies](.agents/skills/upgrade-project-dependencies.md) keeps a Django/Wagtail project current with dependency updates by assessing current setup, applying safe package updates, and delivering a thorough upgrade report. Example prompts:
+
+- "Upgrade all dependencies on this project"
+- "Upgrade the major Python / Django dependencies, keeping version ranges as flexible as possible"
