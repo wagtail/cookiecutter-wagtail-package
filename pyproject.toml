@@ -5,6 +5,8 @@ description = "Placeholder: Project short description"
 readme = "README.md"
 license = "BSD-3-Clause"
 classifiers = [
+    # Update this based on your project's status.
+    # See: https://pypi.org/classifiers/
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",
@@ -36,16 +38,15 @@ Issues = "https://github.com/org-name-or-username/my-project-name/issues"
 
 [dependency-groups]
 dev = [
-    "dj-database-url==2.1.0",
-    "pre-commit==3.4.0",
-    "pytest==8.1.1",
-    "pytest-cov==5.0.0",
-    "pytest-django==4.8.0",
+    "dj-database-url>=3.1.2",
+    "pytest>=8.1.1",
+    "pytest-cov>=7.1.0",
+    "pytest-django>=4.12.0",
     "ruff>=0.15.9",
 ]
 
 [build-system]
-requires = ["uv_build>=0.11.1,<0.12"]
+requires = ["uv_build>=0.11.19,<0.12"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
