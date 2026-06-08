@@ -18,8 +18,6 @@ jobs:
         with:
           persist-credentials: false
       - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
-        with:
-          python-version: '3.11'
       - run: uv sync --dev
       - run: uv add git+https://github.com/wagtail/wagtail --branch main
       - run: uv run pytest -vv
