@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "devDependencies": {
-    "@wagtail/stylelint-config-wagtail": "^1.0.1",
-    "prettier": "^3.8.1",
-    "stylelint": "^16.26.1"
+    "@wagtail/stylelint-config-wagtail": "^2.0.0",
+    "prettier": "^3.8.3",
+    "stylelint": "^17.13.0"
   },
   "scripts": {
     "lint": "npm run lint:format && npm run lint:css",
