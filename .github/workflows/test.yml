@@ -73,22 +73,15 @@ jobs:
     needs: lint
     strategy:
       matrix:
-        # Supported versions of Python/Django/Wagtail, excluding oldest and newest. See:
-        # - https://devguide.python.org/versions/#supported-versions
-        # - https://github.com/wagtail/wagtail/wiki/Release-schedule
-        # - https://docs.wagtail.org/en/stable/releases/upgrading.html#compatible-django-python-versions
+        # Supported versions of Python, excluding oldest and newest.
         include:
-          # Skipped: oldest supported versions, tested in test-lowest-deps.
-          # latest-3 Python, latest-2 Django, latest Wagtail-2.
           - python: '3.11'
-            packages: 'Django>=4.2,<4.3, Wagtail>=7.0,<7.1'
-          # latest-2 Python, latest-1 Django, latest Wagtail-1.
+            resolution: lowest-direct
           - python: '3.12'
-            packages: 'Django>=5.2,<5.3, Wagtail>=7.3,<7.4'
-          # latest-1 Python, latest Django, latest Wagtail.
+            resolution: lowest-direct
           - python: '3.13'
-            packages: 'Django>=6.0,<6.1, Wagtail>=7.4,<7.5'
-          # Skipped: newest supported versions, tested in test-highest-deps.
+            resolution: highest
+          # Skipped (see test-highest-deps): latest Python, latest Django, latest Wagtail.
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
@@ -96,6 +89,6 @@ jobs:
       - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
         with:
           python-version: ${{ matrix.python }}
-      - run: uv run --with '${{ matrix.packages }}' pytest
+      - run: uv run --resolution ${{ matrix.resolution }} --with '${{ matrix.packages }}' pytest
         env:
           DB: sqlite

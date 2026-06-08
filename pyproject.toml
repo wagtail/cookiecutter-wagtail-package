@@ -18,14 +18,20 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
     "Framework :: Django",
-    "Framework :: Django :: 4.2",
     "Framework :: Django :: 5.2",
     "Framework :: Django :: 6.0",
     "Framework :: Wagtail",
     "Framework :: Wagtail :: 7",
 ]
+# See: https://devguide.python.org/versions/#supported-versions
 requires-python = ">=3.10"
-dependencies = ["Django>=4.2", "wagtail>=7.0"]
+dependencies = [
+    # https://www.djangoproject.com/download/#supported-versions
+    "django>=5.2",
+    # https://github.com/wagtail/wagtail/wiki/Release-schedule
+    # https://docs.wagtail.org/en/latest/releases/upgrading.html#compatible-django-python-versions
+    "wagtail>=7.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/org-name-or-username/my-project-name"
