@@ -17,13 +17,13 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
     "Framework :: Django",
     "Framework :: Django :: 4.2",
-    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.2",
+    "Framework :: Django :: 6.0",
     "Framework :: Wagtail",
-    "Framework :: Wagtail :: 5",
-    "Framework :: Wagtail :: 6",
+    "Framework :: Wagtail :: 7",
 ]
 requires-python = ">=3.10"
-dependencies = ["Django>=4.2", "Wagtail>=5.2"]
+dependencies = ["Django>=4.2", "wagtail>=7.0"]
 
 [project.urls]
 Homepage = "https://github.com/org-name-or-username/my-project-name"
