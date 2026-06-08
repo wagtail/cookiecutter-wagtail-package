@@ -23,6 +23,9 @@ jobs:
         with:
           persist-credentials: false
       - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        # Prevent cache poisoning by disabling cache.
+        with:
+          enable-cache: false
       - run: uv build
       # Smoke tests with ready-to-publish package.
       - run: uv run --isolated --no-project --with dist/*.whl pytest
