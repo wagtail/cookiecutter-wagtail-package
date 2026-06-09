@@ -20,17 +20,12 @@ updates:
     cooldown:
       default-days: 7
     groups:
+      framework:
+        patterns: ['django', 'wagtail']
+        versioning-strategy: lockfile-only
       python:
         patterns: ['*']
         exclude-patterns: ['django', 'wagtail']
-
-  - package-ecosystem: uv
-    patterns: ['django', 'wagtail']
-    versioning-strategy: lockfile-only
-    directory: /
-    schedule:
-      interval: cron
-      cronjob: '52 3 12 * *'
 
   - package-ecosystem: npm
     directory: /
