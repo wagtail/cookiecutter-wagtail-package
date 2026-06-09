@@ -73,28 +73,28 @@ npx skills add wagtail/cookiecutter-wagtail-package
 
 #### Create a package from existing code
 
-[create-django-package](.agents/skills/create-django-package.md) also supports extracting Django apps from an existing project to make them reusable as a package. Example prompts:
+[create-django-package](.agents/skills/create-django-package/SKILL.md) also supports extracting Django apps from an existing project to make them reusable as a package. Example prompts:
 
 - "Extract the `myproject/analytics` app into a standalone Wagtail package called 'Wagtail Analytics'"
 - "Turn the `utils/markdown_fields.py` module into a reusable Django package"
 
 #### Package guidelines audit
 
-[package-guidelines-audit](.agents/skills/package-guidelines-audit.md) audits a Django/Wagtail package against the official [Wagtail package maintenance guidelines](https://wagtail.org/package-guidelines/). Example prompts:
+[package-guidelines-audit](.agents/skills/package-guidelines-audit/SKILL.md) audits a Django/Wagtail package against the official [Wagtail package maintenance guidelines](https://wagtail.org/package-guidelines/). Example prompts:
 
 - "Audit this package against the Wagtail package guidelines"
 - "Check whether this package's CI and version support are up to date with Wagtail's guidelines"
 
 #### Update package from template
 
-[update-package-from-template](.agents/skills/update-package-from-template.md) updates an existing Wagtail/Django package to align with the latest cookiecutter-wagtail-package template. Example prompts:
+[update-package-from-template](.agents/skills/update-package-from-template/SKILL.md) updates an existing Wagtail/Django package to align with the latest cookiecutter-wagtail-package template. Example prompts:
 
 - "Compare this package with the latest cookiecutter-wagtail-package template and report any differences"
 - "Update this package's tooling and CI to match the latest cookiecutter-wagtail-package template"
 
 #### Upgrade project dependencies
 
-[upgrade-project-dependencies](.agents/skills/upgrade-project-dependencies.md) keeps a Django/Wagtail project current with dependency updates by assessing current setup, applying safe package updates, and delivering a thorough upgrade report. Example prompts:
+[upgrade-project-dependencies](.agents/skills/upgrade-project-dependencies/SKILL.md) keeps a Django/Wagtail project current with dependency updates by assessing current setup, applying safe package updates, and delivering a thorough upgrade report. Example prompts:
 
 - "Upgrade all dependencies on this project"
 - "Upgrade the major Python / Django dependencies, keeping version ranges as flexible as possible"
