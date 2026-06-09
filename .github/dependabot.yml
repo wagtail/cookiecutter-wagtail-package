@@ -19,10 +19,10 @@ updates:
       cronjob: '52 3 12 * *'
     cooldown:
       default-days: 7
+    versioning-strategy: lockfile-only
     groups:
       framework:
         patterns: ['django', 'wagtail']
-        versioning-strategy: lockfile-only
       python:
         patterns: ['*']
         exclude-patterns: ['django', 'wagtail']
