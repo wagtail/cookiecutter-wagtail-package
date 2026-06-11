@@ -37,7 +37,6 @@ The following are intentionally left out of the template:
 
 - **Frontend build tools** (Vite, webpack, esbuild). Many packages don't need a build step, and those that do have varied requirements. Set up a build pipeline based on your package's needs.
 - **Example models, views, or forms**. The generated `models.py` is empty -- the `wagtail_hooks.py` demonstrates Wagtail integration, but the package's domain logic is yours to define.
-- **Internationalization scaffolding**. While the `wagtail_hooks.py` registers a JavaScript i18n catalog URL, there is no `locale/` directory or example translations. Add these when your package needs them.
 
 ## How to use
 
