@@ -88,3 +88,6 @@ makemessages *args:
     @# Pass any additional arguments to the `makemessages` command, e.g. `just messages -l=es`.
     @# default to `--all` if no arguments are provided.
     uv run ./demo/manage.py makemessages {% raw %}{{ if args != "" { args } else { "--all" } }}{% endraw %}
+
+compilemessages:
+    cd src && uv run ../demo/manage.py compilemessages
