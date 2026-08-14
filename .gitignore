@@ -21,5 +21,6 @@ __pycache__/
 /node_modules
 /test-static
 /test-media
+*.mo
 
 demo/media
