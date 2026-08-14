@@ -1,5 +1,5 @@
-    {% load i18n wagtailadmin_tags %}
+{% load i18n wagtailadmin_tags %}
 <li>
     {% icon name="cog" %}
-    <span>{% trans "Demo: My project name" %}</span>
+    <span>{% blocktrans with project_name="My project name" trimmed %}Hello, I am a panel from {{ project_name }}{% endblocktrans %}</span>
 </li>
