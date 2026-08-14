@@ -19,7 +19,7 @@ git clone git+https://github.com/wagtail/cookiecutter-wagtail-package
 cd cookiecutter-wagtail-package
 ```
 
-We use [just](https://github.com/casey/just) as a task runner, [prek](https://github.com/j178/prek) for pre-commit hooks, and [uv](https://docs.astral.sh/uv/) to manage Python dependencies. Make sure you have all three installed.
+> Requirements: [`uv`](https://github.com/astral-sh/uv), [`just`](https://github.com/casey/just), [`prek`](https://prek.j178.dev/)
 
 Then you can install the dependencies and run the demo app:
 

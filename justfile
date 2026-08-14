@@ -16,12 +16,13 @@ clean-pyc:
 install: clean-pyc
     uv sync --dev
     npm ci
+    uv run prek
 
 # Lint the server code with uv.
 lint-server:
     uv run ruff format --check .
     uv run ruff check .
-    SKIP=ruff-check,ruff-format,lint:css,lint:format uv run prek run --all-files
+    SKIP=ruff-check,ruff-format,lint-css,lint-format uv run prek run --all-files
 
 # Lint the client code with Prettier.
 lint-client:
@@ -34,7 +35,7 @@ lint: lint-server lint-client
 format-server:
     uv run ruff check . --fix
     uv run ruff format .
-    SKIP=ruff-check,ruff-format,lint:css,lint:format uv run prek run --all-files
+    SKIP=ruff-check,ruff-format,lint-css,lint-format uv run prek run --all-files
 
 # Format the client code with Prettier.
 format-client:

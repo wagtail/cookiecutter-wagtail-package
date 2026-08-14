@@ -119,7 +119,7 @@ Understand the package before comparing it. Read key configuration and documenta
 - [ ] Task runner configuration (`justfile`, `Makefile`, or equivalent)
 - [ ] Test configuration (`tox.ini`, `nox`, or equivalent)
 - [ ] CI workflows (`.github/workflows/`)
-- [ ] Linting and formatting tools (ruff, prettier, editorconfig, pre-commit)
+- [ ] Linting and formatting tools (ruff, prettier, editorconfig, prek/pre-commit)
 - [ ] Documentation files (README, CONTRIBUTING, CHANGELOG, LICENSE, SECURITY)
 - [ ] Demo project setup
 - [ ] Python version pinning and dependency management (lockfiles, `.python-version`)
@@ -130,7 +130,7 @@ Report a summary of the current setup to the user before proceeding.
 ### Retrieve the template for comparison
 
 - [ ] Fetch or read the latest template files from [cookiecutter-wagtail-package](https://github.com/wagtail/cookiecutter-wagtail-package):
-  - Root configuration files (`pyproject.toml`, `justfile`, `tox.ini`, `ruff.toml`, `.editorconfig`, `.pre-commit-config.yaml`, `package.json`, `prettier.config.js`)
+  - Root configuration files (`pyproject.toml`, `justfile`, `tox.ini`, `ruff.toml`, `.editorconfig`, `prek.toml`, `package.json`, `prettier.config.js`)
   - Template overlay files (`template/` directory)
   - Source scaffold (`src/` directory structure and key files like `apps.py`, `test/settings.py`)
   - CI workflows if present

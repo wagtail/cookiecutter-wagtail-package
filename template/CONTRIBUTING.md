@@ -13,7 +13,7 @@ git clone git+https://github.com/org-name-or-username/my-project-name
 cd my-project-name
 ```
 
-We use [just](https://github.com/casey/just) as a task runner, [prek](https://github.com/j178/prek) for pre-commit hooks, and [uv](https://docs.astral.sh/uv/) to manage Python dependencies. Make sure you have all three installed.
+> Requirements: [`uv`](https://github.com/astral-sh/uv), [`just`](https://github.com/casey/just), [`prek`](https://prek.j178.dev/)
 
 Then you can install the dependencies and run the demo app:
 
@@ -53,7 +53,7 @@ There is a simple test app in `tests/`. Write your test modules there alongside 
 
 The project uses GitHub Actions for CI. On every push and pull request, the CI will:
 
-- Run linters (Ruff, pre-commit, Prettier).
+- Run linters (Ruff, prek, Prettier).
 - Run tests with coverage.
 - Run tests against the lowest supported dependency versions.
 - Run tests against the latest dependency versions.

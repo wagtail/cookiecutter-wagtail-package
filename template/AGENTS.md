@@ -15,14 +15,14 @@ just help        # View all commands
 just install     # Install Python and Node.js dependencies
 just demo        # Run the demo Wagtail site (migrate + load data + runserver)
 just test        # Run tests with pytest
-just lint        # Run all linters (Ruff, pre-commit, Prettier, Stylelint)
+just lint        # Run all linters (Ruff, prek, Prettier, Stylelint)
 just format      # Run all formatters (Ruff, Prettier)
 just coverage    # Run tests with coverage report
 ```
 
 ## Quality assurance
 
-- Python: Ruff for linting and formatting (`ruff.toml`), pre-commit hooks (`.pre-commit-config.yaml`).
+- Python: Ruff for linting and formatting (`ruff.toml`), prek hooks (`prek.toml`).
 - JavaScript/CSS/JSON/YAML: Prettier for formatting (`prettier.config.js`).
 - CSS: Stylelint with `@wagtail/stylelint-config-wagtail` (`stylelint.config.mjs`).
 - Tests: pytest with pytest-django. Test settings are in `src/my_project_name/test/settings.py`.
