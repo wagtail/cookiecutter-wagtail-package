@@ -17,7 +17,7 @@ The generated package contains:
 - A `demo/` Wagtail site with home, blog, and search apps, ready to run with `just demo`.
 - A `tests/` directory with pytest and pytest-django configured, and a placeholder test.
 - A `justfile` with recipes for linting, formatting, testing, coverage, and running the demo.
-- Project configuration with `pyproject.toml` (uv build backend), `ruff.toml`, pre-commit hooks, Prettier, and Stylelint.
+- Project configuration with `pyproject.toml` (uv build backend), `ruff.toml`, `prek.toml`, Prettier, and Stylelint.
 
 ### CI
 

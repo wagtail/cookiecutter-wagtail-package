@@ -19,7 +19,7 @@ jut help        # View all commands
 just install    # Install Python and Node.js dependencies
 just demo       # Run the demo Wagtail site (migrate + load data + runserver)
 just test       # Run tests with pytest
-just lint       # Run all linters (Ruff, pre-commit, Prettier, Stylelint)
+just lint       # Run all linters (Ruff, prek, Prettier, Stylelint)
 just format     # Run all formatters (Ruff, Prettier)
 just coverage   # Run tests with coverage report
 ```
