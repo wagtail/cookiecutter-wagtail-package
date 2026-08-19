@@ -8,6 +8,11 @@
     "prettier": "^3.9.4",
     "stylelint": "^17.14.0"
   },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm"
+    }
+  },
   "scripts": {
     "lint": "npm run lint:format && npm run lint:css",
     "lint:format": "prettier --check \"**/?(.)*.{css,scss,js,ts,tsx,json,yaml,yml}\"",
