@@ -30,6 +30,8 @@ Here are the available scripts for the project:
 just clean-pyc         # Remove all the Python and Node.js cache files.
 just coverage          # Run tests with coverage.
 just demo              # Run the demo application.
+just docs-build        # Build the documentation site (strict mode).
+just docs-serve        # Build and serve the documentation locally.
 just format            # Run all formatters.
 just format-client     # Format the client code with Prettier.
 just format-server     # Format the server code with uv.
@@ -58,6 +60,7 @@ The project uses GitHub Actions for CI. On every push and pull request, the CI w
 - Run tests against the lowest supported dependency versions.
 - Run tests against the latest dependency versions.
 - Run tests against a compatibility matrix of Python, Django, and Wagtail versions.
+- Build the documentation site (in strict mode) and publish it to GitHub Pages.
 
 There is also a nightly job that tests against the latest development version of Wagtail, so we catch compatibility issues early.
 

@@ -80,6 +80,14 @@ load_initial_data:
 shell:
     uv run ./demo/manage.py shell
 
+# Build the documentation site.
+docs-build:
+    uv run mkdocs build --strict
+
+# Build the documentation site and serve it locally.
+docs-serve:
+    uv run mkdocs serve --strict
+
 # Run the demo application.
 demo: migrate load_initial_data runserver
 
