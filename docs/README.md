@@ -10,6 +10,8 @@ The repository root contains the full, runnable package:
 ├── src/my_project_name/   # The Django app (source code)
 ├── tests/                 # Test suite
 ├── demo/                  # Demo Wagtail site
+├── docs/                  # MkDocs site source (Markdown pages)
+├── mkdocs.yml             # Documentation configuration
 ├── .github/workflows/     # CI configuration
 ├── justfile               # Task runner recipes
 ├── pyproject.toml         # Package metadata and build config

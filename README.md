@@ -17,6 +17,7 @@ The generated package contains:
 - A `demo/` Wagtail site with home, blog, and search apps, ready to run with `just demo`.
 - A `tests/` directory with pytest and pytest-django configured, and a placeholder test.
 - A `justfile` with recipes for linting, formatting, testing, coverage, and running the demo.
+- A documentation site built with [MkDocs](https://www.mkdocs.org/) and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), with an API reference generated from docstrings via [mkdocstrings](https://mkdocstrings.com/) and published to GitHub Pages (`just docs-build` / `just docs-serve`).
 - Project configuration with `pyproject.toml` (uv build backend), `ruff.toml`, `prek.toml`, Prettier, and Stylelint.
 
 ### CI
