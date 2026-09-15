@@ -10,5 +10,6 @@ _build
 *.md
 # Files which contain incompatible syntax.
 *.html
+/site
 .mypy_cache
 /coverage_html_report

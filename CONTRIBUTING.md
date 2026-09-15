@@ -36,6 +36,8 @@ Here are the available tooling scripts for the project:
 just clean-pyc         # Remove all the Python and Node.js cache files.
 just coverage          # Run tests with coverage.
 just demo              # Run the demo application.
+just docs-build        # Build the documentation site (strict mode).
+just docs-serve        # Build and serve the documentation locally.
 just format            # Run all formatters.
 just format-client     # Format the client code with Prettier.
 just format-server     # Format the server code with uv.

@@ -18,6 +18,8 @@ just test            # Run tests with pytest
 just lint            # Run all linters (Ruff, pre-commit, Prettier, Stylelint)
 just format          # Run all formatters (Ruff, Prettier)
 just coverage        # Run tests with coverage report
+just docs-build      # Build the documentation site (strict mode)
+just docs-serve      # Build and serve the documentation locally
 just makemessages    # Extract messages for translation
 just compilemessages # Compile translation message catalogs for use
 ```

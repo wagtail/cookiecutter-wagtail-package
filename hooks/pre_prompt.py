@@ -4,20 +4,38 @@ Cookiecutter pre_prompt hook, restructuring the tool-agnostic template ahead of 
 
 import os
 import shutil
+import subprocess
 
 
+# Always excluded from generated packages: template internals, and working
+# checkout directories that cookiecutter must never see (virtualenvs and build
+# output contain raw Jinja templates which break rendering; the rest is
+# development-only content). Extend this list when in doubt: the hook also
+# skips any top-level git-ignored directory automatically (see
+# git_ignored_top_level_dirs), covering gitignored paths not listed here.
 EXCLUDE_FROM_TEMPLATE = {
     "template",
     "hooks",
     "cookiecutter.json",
     ".git",
     "__pycache__",
+    ".venv",
+    "venv",
+    "site",
+    "node_modules",
+    # Template-authoring skills, not part of generated packages. Generated
+    # packages ship their own skill under src/<package>/.agents/skills/.
+    ".agents",
 }
 
 
 # Placeholder replacements: (pattern, replacement)
 # Order matters: replace longer/more specific patterns first to avoid partial replacements
 PLACEHOLDER_REPLACEMENTS = [
+    (
+        "https://org-name-or-username.github.io/my-project-name",
+        "{{ cookiecutter.__project_site_url }}",
+    ),
     ("my_project_name", "{{ cookiecutter.__project_name_snake }}"),
     ("my-project-name", "{{ cookiecutter.__project_name_kebab }}"),
     ("MyProjectName", "{{ cookiecutter.__project_name_camel }}"),
@@ -60,6 +78,37 @@ def should_process_file(filepath: str) -> bool:
     return ext in TEXT_EXTENSIONS or basename.startswith(".")
 
 
+def git_ignored_top_level_dirs(src_root: str) -> set[str]:
+    """Return names of top-level git-ignored directories in the template checkout.
+
+    Keeps gitignored build output (virtualenvs, ``site/``, ``node_modules/``…)
+    from being copied into generated packages. Falls back to an empty set when
+    git is unavailable, e.g. when generating from a zip download.
+    """
+    try:
+        git = shutil.which("git")
+        if git is None:
+            return set()
+        result = subprocess.run(  # noqa: S603 - fixed executable, trusted cwd
+            [git, "-C", src_root, "status", "--porcelain", "--ignored"],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+    except subprocess.CalledProcessError:
+        return set()
+    ignored = set()
+    for line in result.stdout.splitlines():
+        # Only ignored entries ("!!") are skipped: untracked files ("??") may
+        # be template content not committed yet, and must still be copied.
+        if not line.startswith("!! "):
+            continue
+        name = line[3:].rstrip("/")
+        if "/" not in name and os.path.isdir(os.path.join(src_root, name)):
+            ignored.add(name)
+    return ignored
+
+
 def copy_and_merge(
     src_root: str, target_root: str, exclude: set[str] | None = None
 ) -> None:
@@ -80,12 +129,17 @@ def copy_and_merge(
 
 
 def rename_project_dirs(root: str) -> None:
-    """Rename my_project_name directories to {{ cookiecutter.__project_name_snake }}."""
-    # Walk bottom-up so we can rename nested directories
+    """Rename placeholder directories to their cookiecutter variables."""
+    # Walk bottom-up so we can rename nested directories.
     for dirpath, dirnames, _ in os.walk(root, topdown=False):
         if "my_project_name" in dirnames:
             old_path = os.path.join(dirpath, "my_project_name")
             new_path = os.path.join(dirpath, "{{ cookiecutter.__project_name_snake }}")
+            if os.path.exists(old_path):
+                shutil.move(old_path, new_path)
+        if "my-project-name" in dirnames:
+            old_path = os.path.join(dirpath, "my-project-name")
+            new_path = os.path.join(dirpath, "{{ cookiecutter.__project_name_kebab }}")
             if os.path.exists(old_path):
                 shutil.move(old_path, new_path)
 
@@ -123,7 +177,8 @@ def main() -> None:
 
     # Create target folder and merge content (exclude target from copy)
     os.makedirs(target_path, exist_ok=True)
-    copy_exclude = EXCLUDE_FROM_TEMPLATE | {target_folder_name}
+    copy_exclude = EXCLUDE_FROM_TEMPLATE | git_ignored_top_level_dirs(repo_root)
+    copy_exclude |= {target_folder_name}
     copy_and_merge(repo_root, target_path, copy_exclude)
 
     # Rename my_project_name directories
