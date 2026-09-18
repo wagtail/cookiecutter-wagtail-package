@@ -1,7 +1,7 @@
 {
   "name": "package-tooling",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0-dev",
   "type": "module",
   "devDependencies": {
     "@wagtail/stylelint-config-wagtail": "^2.0.0",
