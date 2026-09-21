@@ -59,7 +59,7 @@ jobs:
           # Places catalogs back in the same relative path as when they were uploaded
           # meaning they will be in the correct location for packaging
           name: compiled-message-catalogs
-      - run: uv build
+      - run: uv build --verbose
       # Smoke tests with ready-to-publish package.
       - run: uv run --isolated --no-project --with dist/*.whl pytest
       - run: uv run --isolated --no-project --with dist/*.tar.gz pytest
