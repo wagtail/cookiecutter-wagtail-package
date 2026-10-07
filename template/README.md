@@ -12,7 +12,7 @@ Placeholder: Project short description.
 
 ## Supported versions
 
-This package supports Wagtail 7.0 and up, and all [compatible versions of Python and Django](https://docs.wagtail.org/en/stable/releases/upgrading.html#compatible-django-python-versions).
+This package supports Wagtail 7.4 and up, and all [compatible versions of Python and Django](https://docs.wagtail.org/en/stable/releases/upgrading.html#compatible-django-python-versions).
 
 ## Installation
 
