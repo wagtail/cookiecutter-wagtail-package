@@ -70,3 +70,4 @@ source-exclude = [
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "my_project_name.test.settings"
+testpaths = ["tests"]
