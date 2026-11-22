@@ -6,7 +6,7 @@
   "devDependencies": {
     "@wagtail/stylelint-config-wagtail": "^2.0.0",
     "prettier": "^3.9.4",
-    "stylelint": "^17.14.0"
+    "stylelint": "^18.0.0"
   },
   "devEngines": {
     "packageManager": {
